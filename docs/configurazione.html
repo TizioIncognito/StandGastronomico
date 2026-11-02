@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Configurazione delle categorie | Stand Gastronomico</title>
+  <meta name="description" content="Come personalizzare le etichette delle categorie in Stand Gastronomico attraverso il file Config/categories.json.">
+  <link rel="stylesheet" href="guide.css">
+</head>
+<body>
+  <header>
+    <div class="wrap topbar">
+      <a href="index.html"><strong>Stand Gastronomico</strong></a>
+      <nav><a href="index.html">Home</a><a href="template-stampa.html">Template di stampa</a><a href="https://github.com/TizioIncognito/StandGastronomico">GitHub</a></nav>
+    </div>
+    <div class="wrap intro"><h1>Configurazione delle categorie</h1><p>Personalizza le etichette delle categorie del tuo stand senza modificare il programma.</p></div>
+  </header>
+  <main class="wrap">
+    <article>
+      <h2>File <code>Config/categories.json</code></h2>
+      <p>Le impostazioni si trovano nella cartella <code>Config</code> dell'applicazione. Dopo una modifica, chiudi e riapri il programma per applicare le nuove etichette.</p>
+      <p>Le categorie sono sempre cinque e il loro ordine non cambia. Il file modifica soltanto il nome mostrato: non crea, elimina, sposta o nasconde categorie.</p>
+      <p>Le chiavi indicano la posizione della categoria, non il tipo di cibo:</p>
+      <pre><code>{
+  "cat1": "Pizzeria",
+  "cat2": "Bomboloni",
+  "cat3": "Primi",
+  "cat4": "Secondi",
+  "cat5": "Griglia"
+}</code></pre>
+      <table><thead><tr><th>Chiave</th><th>Categoria predefinita</th></tr></thead><tbody>
+        <tr><td><code>cat1</code></td><td>Bar</td></tr><tr><td><code>cat2</code></td><td>Primi</td></tr><tr><td><code>cat3</code></td><td>Secondi</td></tr><tr><td><code>cat4</code></td><td>Fritti</td></tr><tr><td><code>cat5</code></td><td>Griglia</td></tr>
+      </tbody></table>
+      <h2>Regole da rispettare</h2>
+      <ul>
+        <li>Usa esattamente le cinque chiavi <code>cat1</code>, <code>cat2</code>, <code>cat3</code>, <code>cat4</code> e <code>cat5</code>.</li>
+        <li>Ogni etichetta deve essere diversa dalle altre, non vuota e lunga al massimo 40 caratteri.</li>
+        <li>Gli spazi iniziali e finali vengono ignorati; i caratteri <code>{</code> e <code>}</code> non sono ammessi.</li>
+        <li>Se il file manca, l'applicazione usa le etichette predefinite.</li>
+        <li>Se il file contiene un errore, all'avvio viene mostrato un avviso e vengono usate le etichette predefinite.</li>
+      </ul>
+      <div class="notice">Le etichette scelte compaiono nel Listino, nella Cassa e nelle intestazioni di stampa. Se una categoria non serve, lasciala senza prodotti: rimane comunque disponibile nel Listino.</div>
+      <div class="next"><a class="button" href="template-stampa.html">Personalizza la stampa</a><a class="button alt" href="https://github.com/TizioIncognito/StandGastronomico/blob/master/docs/CONFIGURAZIONE.md">Vedi la versione Markdown</a></div>
+    </article>
+  </main>
+  <footer><div class="wrap">Stand Gastronomico · <a href="index.html">Torna alla home</a></div></footer>
+</body>
+</html>

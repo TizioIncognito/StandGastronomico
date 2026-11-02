@@ -1,0 +1,33 @@
+:root { --navy:#102a43; --ink:#172a3a; --muted:#52616b; --gold:#f59e0b; --cream:#fff9ee; --white:#fff; --line:#d4dce3; }
+* { box-sizing:border-box; }
+body { margin:0; color:var(--ink); font-family:Segoe UI,Arial,sans-serif; line-height:1.6; background:var(--cream); }
+a { color:#075b9d; }
+header { color:var(--white); background:linear-gradient(135deg,#09213f,#164e78 65%,#bb6810); }
+.wrap { width:min(920px,calc(100% - 40px)); margin:auto; }
+.topbar { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; padding:18px 0; font-size:.95rem; }
+.topbar a { color:var(--white); text-decoration:none; }
+.topbar nav { display:flex; flex-wrap:wrap; gap:18px; }
+.intro { padding:44px 0 52px; }
+h1 { margin:0 0 12px; font-size:clamp(2rem,5vw,3.4rem); line-height:1.1; }
+.intro p { max-width:680px; margin:0; font-size:1.12rem; }
+main { padding:48px 0 64px; }
+article { padding:clamp(24px,5vw,48px); border-radius:16px; background:var(--white); box-shadow:0 4px 18px #102a4315; }
+h2 { margin:42px 0 14px; color:var(--navy); font-size:1.55rem; line-height:1.2; }
+h2:first-child { margin-top:0; }
+p,li { max-width:760px; }
+li { margin:7px 0; }
+code,pre { font-family:Consolas,"Courier New",monospace; }
+code { padding:2px 5px; border-radius:4px; background:#edf3f7; color:#13334f; }
+pre { overflow:auto; padding:18px; border-radius:9px; color:#eff7ff; background:#102a43; }
+pre code { padding:0; color:inherit; background:transparent; }
+table { width:100%; border-collapse:collapse; margin:18px 0; }
+th,td { padding:11px 12px; text-align:left; border:1px solid var(--line); }
+th { color:var(--white); background:var(--navy); }
+tr:nth-child(even) { background:#f7fafc; }
+.notice { margin:24px 0; padding:16px 18px; border-left:5px solid var(--gold); border-radius:0 8px 8px 0; background:#fff5dc; }
+.next { display:flex; flex-wrap:wrap; gap:12px; margin-top:42px; }
+.button { display:inline-block; padding:10px 14px; border:2px solid var(--gold); border-radius:8px; background:var(--gold); color:#1c2630; font-weight:700; text-decoration:none; }
+.button.alt { background:var(--white); color:#075b9d; }
+footer { padding:25px 0; color:#dbe7ef; background:#081b2c; text-align:center; font-size:.9rem; }
+footer a { color:#fff; }
+@media (max-width:600px) { .topbar { align-items:flex-start; flex-direction:column; } article { padding:24px; } th,td { padding:9px; } }

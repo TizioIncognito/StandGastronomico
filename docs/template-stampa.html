@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Template di stampa | Stand Gastronomico</title>
+  <meta name="description" content="Come personalizzare HTML e CSS della stampa degli ordini in Stand Gastronomico.">
+  <link rel="stylesheet" href="guide.css">
+</head>
+<body>
+  <header>
+    <div class="wrap topbar">
+      <a href="index.html"><strong>Stand Gastronomico</strong></a>
+      <nav><a href="index.html">Home</a><a href="configurazione.html">Configurazione</a><a href="https://github.com/TizioIncognito/StandGastronomico">GitHub</a></nav>
+    </div>
+    <div class="wrap intro"><h1>Personalizzazione dei template di stampa</h1><p>Modifica testi e aspetto degli ordini stampati, senza ricompilare il programma.</p></div>
+  </header>
+  <main class="wrap">
+    <article>
+      <h2>I file della stampa</h2>
+      <p>La stampa degli ordini può essere personalizzata intervenendo sui file della cartella <code>Config/Print</code> dell'applicazione:</p>
+      <ul><li><code>OrderPrint.html</code> definisce struttura e testi della stampa;</li><li><code>OrderPrint.css</code> definisce l'aspetto grafico.</li></ul>
+      <p>I file vengono riletti a ogni stampa: dopo averli salvati, non è necessario riavviare o ricompilare il programma. Il documento di stampa è locale e autosufficiente; non usa Internet, font remoti o script.</p>
+      <div class="notice">Prima di modificare i file, fanne una copia di sicurezza. Mantieni i segnaposto e gli elementi obbligatori descritti sotto: servono al programma per inserire i dati dell'ordine.</div>
+      <h2>Segnaposto disponibili</h2>
+      <table><thead><tr><th>Segnaposto</th><th>Significato</th></tr></thead><tbody>
+        <tr><td><code>{{ORDER_NUMBER}}</code></td><td>Numero dell'ordine</td></tr><tr><td><code>{{TIME}}</code></td><td>Orario di salvataggio</td></tr><tr><td><code>{{CUSTOMER_NAME}}</code></td><td>Nome del cliente</td></tr><tr><td><code>{{TOTAL}}</code></td><td>Totale dell'ordine</td></tr><tr><td><code>{{CSS}}</code></td><td>Foglio di stile incorporato</td></tr><tr><td><code>{{PAGE_CLASS}}</code></td><td><code>compact</code> per ordini con oltre 12 righe; altrimenti vuoto</td></tr><tr><td><code>{{CATEGORY_1}}</code> … <code>{{CATEGORY_5}}</code></td><td>Etichetta corrente della prima…quinta categoria</td></tr><tr><td><code>{{DESCRIPTION}}</code>, <code>{{QUANTITY}}</code>, <code>{{UNIT_PRICE}}</code>, <code>{{SUBTOTAL}}</code></td><td>Celle dei modelli di riga</td></tr>
+      </tbody></table>
+      <h2>Sezioni delle categorie</h2>
+      <p>Ogni sezione di stampa è riconosciuta dalla chiave della categoria, non dall'etichetta visualizzata. Per esempio:</p>
+      <pre><code>&lt;tbody data-print-category="cat2"&gt;&lt;/tbody&gt;</code></pre>
+      <p>Le chiavi sono le stesse di <code>categories.json</code>, da <code>cat1</code> a <code>cat5</code>. Se cambi il nome mostrato della categoria, non devi modificare la chiave del template. Puoi usare anche il segnaposto corrispondente nell'intestazione:</p>
+      <pre><code>&lt;h2&gt;{{CATEGORY_2}} - Ordine n. {{ORDER_NUMBER}}&lt;/h2&gt;</code></pre>
+      <p>Puoi mantenere solo le sezioni necessarie al tuo stand. Le righe delle categorie senza una sezione dedicata restano comunque nel riepilogo iniziale. Nel template predefinito <code>cat1</code> compare solo nel riepilogo; per aggiungere una sezione dedicata, inserisci un elemento con <code>data-print-category="cat1"</code> e la relativa intestazione.</p>
+      <h2>Elementi obbligatori</h2>
+      <p>Non rimuovere questi elementi dall'HTML:</p>
+      <ul><li>il contenitore del riepilogo <code>data-print-rows="summary"</code>;</li><li>il blocco <code>&lt;template id="summary-row"&gt;</code>;</li><li>il blocco <code>&lt;template id="section-row"&gt;</code>.</li></ul>
+      <div class="notice">Dopo ogni modifica, esegui una stampa di prova e controlla che riepilogo, categorie e totale siano presenti e leggibili.</div>
+      <div class="next"><a class="button" href="configurazione.html">Configura le categorie</a><a class="button alt" href="https://github.com/TizioIncognito/StandGastronomico/blob/master/docs/TEMPLATE_STAMPA.md">Vedi la versione Markdown</a></div>
+    </article>
+  </main>
+  <footer><div class="wrap">Stand Gastronomico · <a href="index.html">Torna alla home</a></div></footer>
+</body>
+</html>
