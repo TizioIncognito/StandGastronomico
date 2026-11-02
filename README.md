@@ -1,6 +1,6 @@
-# 🍽️ Stand Gastronomico
+# 🍽️ Stand Gastronomico — Gestionale gratuito per sagre e feste
 
-**Il gestionale gratuito per organizzare ordini e servizi di sagre, feste ed eventi gastronomici.**
+**Un programma gratuito e offline per Windows, pensato per associazioni, volontari e organizzatori di sagre, feste paesane ed eventi gastronomici.**
 
 Stand Gastronomico è un'applicazione desktop per Windows pensata per associazioni, volontari e organizzatori di eventi gastronomici.
 
@@ -90,6 +90,7 @@ Per maggiori informazioni consulta la [guida alla configurazione](docs/CONFIGURA
 - [Guida utente](GUIDA_UTENTE.pdf)
 - [Personalizzazione e configurazione](docs/CONFIGURAZIONE.md)
 - [Personalizzazione dei template di stampa](docs/TEMPLATE_STAMPA.md)
+- [Cronologia delle versioni](CHANGELOG.md)
 
 ## 🔒 Privacy
 

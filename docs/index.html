@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stand Gastronomico | Gestionale gratuito per sagre e feste</title>
+  <meta name="description" content="Gestionale gratuito e offline per Windows dedicato a sagre, feste ed eventi gastronomici: cassa, ordini, magazzino, statistiche e stampa.">
+  <meta property="og:title" content="Stand Gastronomico | Gestionale gratuito per sagre e feste">
+  <meta property="og:description" content="Cassa, ordini, magazzino e stampa per associazioni e organizzatori di eventi gastronomici.">
+  <meta property="og:image" content="https://tizioincognito.github.io/StandGastronomico/images/social-preview.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:url" content="https://tizioincognito.github.io/StandGastronomico/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f59e0b">
+  <style>
+    :root { --navy:#102a43; --ink:#172a3a; --muted:#52616b; --gold:#f59e0b; --cream:#fff9ee; --white:#fff; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); font-family:Segoe UI,Arial,sans-serif; line-height:1.55; background:var(--cream); }
+    a { color:#075b9d; }
+    .hero { color:var(--white); background:linear-gradient(135deg,#09213f,#164e78 58%,#bb6810); }
+    .wrap { width:min(1120px,calc(100% - 40px)); margin:auto; }
+    .hero .wrap { display:grid; grid-template-columns:1.15fr .85fr; gap:42px; align-items:center; padding:76px 0; }
+    h1,h2,h3 { line-height:1.14; }
+    h1 { margin:0 0 18px; font-size:clamp(2.35rem,5vw,4.4rem); letter-spacing:-.04em; }
+    h2 { margin:0 0 16px; font-size:clamp(1.7rem,3vw,2.4rem); color:var(--navy); }
+    .lead { max-width:650px; margin:0; font-size:1.18rem; }
+    .buttons { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+    .button { display:inline-block; padding:12px 18px; border:2px solid var(--gold); border-radius:9px; background:var(--gold); color:#1c2630; font-weight:700; text-decoration:none; }
+    .button.secondary { background:transparent; color:var(--white); }
+    .hero-card { padding:14px; border-radius:18px; background:#fff; box-shadow:0 18px 45px #00152877; }
+    .hero-card img { display:block; width:100%; border-radius:9px; }
+    main section { padding:62px 0; }
+    .alt { background:var(--white); }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .card { padding:22px; border-radius:12px; background:var(--white); box-shadow:0 3px 15px #102a431a; }
+    .alt .card { background:var(--cream); }
+    .card h3 { margin:0 0 7px; color:var(--navy); }
+    .card p { margin:0; color:var(--muted); }
+    .two { display:grid; grid-template-columns:1fr 1fr; gap:42px; align-items:center; }
+    .checklist { margin:0; padding-left:20px; }
+    .checklist li { margin:8px 0; }
+    .shot-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .shot-grid img { width:100%; border:1px solid #d4dce3; border-radius:10px; box-shadow:0 4px 14px #102a4322; }
+    .cta { text-align:center; background:var(--navy); color:var(--white); }
+    .cta h2 { color:var(--white); }
+    .cta p { max-width:690px; margin:0 auto; }
+    footer { padding:28px 0; color:#dbe7ef; background:#081b2c; text-align:center; font-size:.92rem; }
+    footer a { color:#fff; }
+    @media (max-width:760px) { .hero .wrap,.two { grid-template-columns:1fr; } .grid { grid-template-columns:1fr; } .shot-grid { grid-template-columns:1fr 1fr; } .hero .wrap { padding:52px 0; } }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Stand Gastronomico</h1>
+        <p class="lead">Il gestionale gratuito e offline per organizzare sagre, feste paesane ed eventi gastronomici su Windows.</p>
+        <div class="buttons">
+          <a class="button" href="https://github.com/TizioIncognito/StandGastronomico/releases/latest">Scarica l'ultima versione</a>
+          <a class="button secondary" href="https://github.com/TizioIncognito/StandGastronomico">Apri il progetto su GitHub</a>
+        </div>
+      </div>
+      <div class="hero-card"><img src="images/CreaOrdini.png" alt="Schermata Cassa di Stand Gastronomico con un ordine in corso"></div>
+    </div>
+  </header>
+  <main>
+    <section>
+      <div class="wrap">
+        <h2>Tutto quello che serve durante il servizio</h2>
+        <div class="grid">
+          <article class="card"><h3>Cassa e ordini</h3><p>Crea, modifica, salva e stampa gli ordini in modo rapido.</p></article>
+          <article class="card"><h3>Listino e varianti</h3><p>Organizza prodotti, prezzi, supplementi e preparazioni alternative.</p></article>
+          <article class="card"><h3>Magazzino</h3><p>Controlla le porzioni disponibili e impedisci vendite oltre la disponibilità.</p></article>
+          <article class="card"><h3>Statistiche</h3><p>Consulta vendite e incassi, poi esporta i dati in Excel.</p></article>
+          <article class="card"><h3>Sessioni</h3><p>Gestisci i turni di servizio e mantieni separati gli ordini.</p></article>
+          <article class="card"><h3>Menu per evento</h3><p>Salva e richiama configurazioni diverse per ogni festa o periodo.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="alt">
+      <div class="wrap two">
+        <div>
+          <h2>Semplice da installare</h2>
+          <ul class="checklist">
+            <li>Applicazione portable per Windows 10 e Windows 11 a 64 bit.</li>
+            <li>Runtime .NET incluso: non è necessaria un'installazione aggiuntiva.</li>
+            <li>Funziona offline e non richiede account o abbonamenti.</li>
+            <li>Estrai lo ZIP in una cartella scrivibile, ad esempio <code>C:\StandGastronomico</code>.</li>
+            <li>Per la stampa serve Microsoft Edge WebView2 Runtime.</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Fatta per essere adattata al tuo stand</h2>
+          <p>Puoi modificare le etichette delle cinque categorie e il layout della stampa degli ordini senza ricompilare il programma.</p>
+          <p><a href="CONFIGURAZIONE.md">Guida alla configurazione</a> · <a href="TEMPLATE_STAMPA.md">Template di stampa</a> · <a href="https://github.com/TizioIncognito/StandGastronomico/blob/master/GUIDA_UTENTE.pdf">Guida utente PDF</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap">
+        <h2>Le schermate principali</h2>
+        <div class="shot-grid">
+          <img src="images/Listino.png" alt="Schermata Listino per prodotti, categorie e prezzi">
+          <img src="images/Magazzino.png" alt="Schermata Magazzino per il controllo delle porzioni disponibili">
+          <img src="images/Statistiche.png" alt="Schermata Statistiche per vendite e incassi">
+        </div>
+      </div>
+    </section>
+    <section class="cta">
+      <div class="wrap">
+        <h2>Gratuito, senza account, senza telemetria</h2>
+        <p>I dati degli ordini rimangono sul tuo computer. Per domande, problemi o suggerimenti puoi usare Issues e Discussions su GitHub.</p>
+        <div class="buttons">
+          <a class="button" href="https://github.com/TizioIncognito/StandGastronomico/issues">Segnala un problema</a>
+          <a class="button secondary" href="https://github.com/TizioIncognito/StandGastronomico/discussions">Partecipa alle discussioni</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap">Stand Gastronomico · Sviluppato da TizioIncognito · <a href="https://paypal.me/LucaFigoli">Sostieni il progetto</a></div></footer>
+</body>
+</html>
