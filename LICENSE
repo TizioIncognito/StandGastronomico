@@ -1,0 +1,73 @@
+# Stand Gastronomico – Licenza d'uso e distribuzione
+
+**Copyright © 2026 TizioIncognito. Tutti i diritti riservati.**
+
+Stand Gastronomico è un software gratuito distribuito secondo i termini di questa licenza. Non è un software open source e il codice sorgente non viene concesso in licenza.
+
+## 1. Utilizzo
+
+È consentito scaricare, installare e utilizzare gratuitamente Stand Gastronomico, anche per attività associative, commerciali, feste, sagre ed eventi pubblici o privati.
+
+Non sono previsti abbonamenti, costi di licenza o limitazioni temporali.
+
+## 2. Ridistribuzione
+
+È consentito copiare e ridistribuire gratuitamente il programma compilato, a condizione che:
+
+- il programma venga distribuito integro, senza modifiche al suo eseguibile o ai suoi componenti;
+- venga mantenuta questa licenza e l'attribuzione all'autore;
+- non venga richiesto un corrispettivo per il software o per la sua copia.
+
+È consentito includere il programma in archivi o raccolte di software gratuiti, purché siano rispettate le condizioni sopra indicate.
+
+## 3. Personalizzazione
+
+È consentito modificare i file di configurazione e i template forniti con il programma, compresi quelli relativi alle categorie e alla stampa degli ordini.
+
+Le personalizzazioni possono essere utilizzate liberamente per le proprie esigenze e condivise con altri utenti.
+
+Questa autorizzazione non concede alcun diritto sul codice sorgente dell'applicazione.
+
+## 4. Limitazioni
+
+Non è consentito:
+
+- vendere il programma o distribuire copie a pagamento;
+- distribuire versioni modificate dell'applicazione o presentarle come versioni ufficiali;
+- rimuovere o alterare le informazioni di attribuzione e copyright;
+- dichiarare di essere l'autore o il titolare del software.
+
+Restano salve le eccezioni e i diritti inderogabili previsti dalla normativa applicabile.
+
+## 5. Proprietà intellettuale
+
+Il software, il codice sorgente, il marchio e gli elementi grafici originali rimangono di proprietà dei rispettivi titolari.
+
+Questa licenza concede esclusivamente i diritti espressamente indicati e non trasferisce la proprietà del software.
+
+I componenti di terze parti eventualmente inclusi nel programma restano soggetti alle rispettive licenze.
+
+## 6. Garanzia e limitazione di responsabilità
+
+Il programma viene fornito "così com'è", senza alcuna garanzia, espressa o implicita, nei limiti consentiti dalla normativa applicabile.
+
+L'autore non garantisce che il software sia privo di errori, interruzioni o malfunzionamenti, né che i risultati dei calcoli siano sempre corretti.
+
+In particolare, l'autore non assume responsabilità per:
+- errori nel calcolo di prezzi, totali, incassi o resto;
+- discrepanze tra ordini registrati e pagamenti effettivamente ricevuti;
+- errori nella gestione delle quantità e delle giacenze di magazzino;
+- perdita, danneggiamento o alterazione dei dati;
+- danni o perdite economiche derivanti dall'utilizzo o dall'impossibilità di utilizzare il programma.
+
+L'utente è responsabile della verifica dei dati, degli ordini, dei pagamenti e delle giacenze. È tenuto a controllare autonomamente la correttezza degli incassi e a effettuare periodicamente copie di sicurezza dei dati.
+
+L'utilizzo del programma avviene sotto la responsabilità dell'utente.
+
+Le limitazioni sopra indicate si applicano nella misura massima consentita dalla legge e non escludono responsabilità o obblighi che, ai sensi della normativa applicabile, non possono essere esclusi o limitati.
+
+## 7. Accettazione
+
+L'utilizzo e la ridistribuzione del programma comportano l'accettazione dei termini di questa licenza.
+
+Per informazioni e segnalazioni è possibile utilizzare il repository GitHub ufficiale del progetto.
