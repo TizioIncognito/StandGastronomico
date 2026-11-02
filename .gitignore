@@ -1,0 +1,6 @@
+# Materiale temporaneo prodotto dalle verifiche locali
+tmp/
+
+# File generati da Windows che non fanno parte della distribuzione
+Thumbs.db
+Desktop.ini

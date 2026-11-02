@@ -23,8 +23,6 @@ Permette di gestire gli ordini, il listino, le varianti, il magazzino e gli inca
 
 ## 🖥️ Screenshot
 
-<!-- Inserire qui gli screenshot delle schermate principali -->
-
 | Cassa | Listino |
 |---|---|
 | ![Cassa](docs/images/CreaOrdini.png) | ![Listino](docs/images/Listino.png) |
