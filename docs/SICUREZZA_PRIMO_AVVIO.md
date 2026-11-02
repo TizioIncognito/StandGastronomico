@@ -30,7 +30,7 @@ Nel repository è disponibile il file `SHA256SUMS.txt`, con l'impronta SHA-256 d
 Apri PowerShell nella cartella che contiene il file ZIP ed esegui:
 
 ```powershell
-Get-FileHash -Algorithm SHA256 -LiteralPath .\StandGastronomico-1.0.1-win-x64.zip
+Get-FileHash -Algorithm SHA256 -LiteralPath .\StandGastronomico-1.0.2-win-x64.zip
 ```
 
 Confronta il valore mostrato con quello riportato in `SHA256SUMS.txt`. I due valori devono essere identici.
