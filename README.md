@@ -119,7 +119,7 @@ Puoi partecipare alle [Discussioni](../../discussions).
 
 Stand Gastronomico è gratuito e rimarrà gratuito.
 
-Se il programma ti è utile e desideri sostenere il suo sviluppo, puoi offrire un contributo volontario tramite [PayPal](https://paypal.me/LucaFigoli).
+Se il programma ti è utile e desideri sostenere il suo sviluppo, puoi offrire un contributo volontario su [Ko-fi](https://ko-fi.com/tizioincognito).
 
 Il contributo è completamente facoltativo e non dà diritto a funzionalità aggiuntive.
 
