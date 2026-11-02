@@ -62,6 +62,8 @@ Stand Gastronomico non richiede una connessione Internet per il normale funziona
 
 **Importante:** evita di estrarre il programma in cartelle protette di Windows, come `Program Files`, se non disponi dei necessari permessi di scrittura.
 
+Al primo avvio Windows può mostrare un avviso SmartScreen perché il programma non è firmato digitalmente. Prosegui solo se hai scaricato il file dalla release ufficiale; trovi istruzioni dettagliate in [Primo avvio e avviso di Windows](docs/SICUREZZA_PRIMO_AVVIO.md).
+
 ## 🔄 Aggiornamento
 
 Per aggiornare il programma:
@@ -90,6 +92,8 @@ Per maggiori informazioni consulta la [guida alla configurazione](docs/CONFIGURA
 - [Guida utente](GUIDA_UTENTE.pdf)
 - [Personalizzazione e configurazione](docs/CONFIGURAZIONE.md)
 - [Personalizzazione dei template di stampa](docs/TEMPLATE_STAMPA.md)
+- [Primo avvio e avviso di Windows](docs/SICUREZZA_PRIMO_AVVIO.md)
+- [Verifica dell'integrità del download](SHA256SUMS.txt)
 - [Cronologia delle versioni](CHANGELOG.md)
 
 ## 🔒 Privacy
