@@ -42,6 +42,12 @@
     .checklist li { margin:8px 0; }
     .shot-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
     .shot-grid img { width:100%; border:1px solid #d4dce3; border-radius:10px; box-shadow:0 4px 14px #102a4322; }
+    .previewable { cursor:zoom-in; transition:transform .2s ease, box-shadow .2s ease; }
+    @media (hover:hover) { .previewable:hover { transform:scale(1.025); box-shadow:0 12px 26px #00152855; } }
+    .lightbox[hidden] { display:none; }
+    .lightbox { position:fixed; z-index:10; inset:0; display:grid; place-items:center; padding:24px; background:#061523e8; cursor:zoom-out; }
+    .lightbox img { max-width:min(1400px,94vw); max-height:86vh; border-radius:8px; box-shadow:0 18px 55px #000a; cursor:default; }
+    .lightbox button { position:fixed; top:20px; right:20px; width:42px; height:42px; border:0; border-radius:50%; background:var(--white); color:var(--navy); font-size:1.8rem; line-height:1; cursor:pointer; }
     .cta { text-align:center; background:var(--navy); color:var(--white); }
     .cta h2 { color:var(--white); }
     .cta p { max-width:690px; margin:0 auto; }
@@ -61,7 +67,7 @@
           <a class="button secondary" href="https://github.com/TizioIncognito/StandGastronomico">Apri il progetto su GitHub</a>
         </div>
       </div>
-      <div class="hero-card"><img src="images/CreaOrdini.png" alt="Schermata Cassa di Stand Gastronomico con un ordine in corso"></div>
+      <div class="hero-card"><img class="previewable" src="images/CreaOrdini.png" alt="Schermata Cassa di Stand Gastronomico con un ordine in corso"></div>
     </div>
   </header>
   <main>
@@ -101,9 +107,9 @@
       <div class="wrap">
         <h2>Le schermate principali</h2>
         <div class="shot-grid">
-          <img src="images/Listino.png" alt="Schermata Listino per prodotti, categorie e prezzi">
-          <img src="images/Magazzino.png" alt="Schermata Magazzino per il controllo delle porzioni disponibili">
-          <img src="images/Statistiche.png" alt="Schermata Statistiche per vendite e incassi">
+          <img class="previewable" src="images/Listino.png" alt="Schermata Listino per prodotti, categorie e prezzi">
+          <img class="previewable" src="images/Magazzino.png" alt="Schermata Magazzino per il controllo delle porzioni disponibili">
+          <img class="previewable" src="images/Statistiche.png" alt="Schermata Statistiche per vendite e incassi">
         </div>
       </div>
     </section>
@@ -119,5 +125,46 @@
     </section>
   </main>
   <footer><div class="wrap">Stand Gastronomico · Sviluppato da TizioIncognito · <a href="https://paypal.me/LucaFigoli">Sostieni il progetto</a></div></footer>
+  <div class="lightbox" id="lightbox" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Anteprima immagine">
+    <button type="button" id="lightbox-close" aria-label="Chiudi anteprima">×</button>
+    <img id="lightbox-image" src="" alt="">
+  </div>
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const closeLightbox = document.getElementById('lightbox-close');
+
+    function closePreview() {
+      lightbox.hidden = true;
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImage.src = '';
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.previewable').forEach((image) => {
+      image.setAttribute('tabindex', '0');
+      image.setAttribute('role', 'button');
+      image.setAttribute('aria-label', `${image.alt}. Apri ingrandimento`);
+      const openPreview = () => {
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
+        lightbox.hidden = false;
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        closeLightbox.focus();
+      };
+      image.addEventListener('click', openPreview);
+      image.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openPreview();
+        }
+      });
+    });
+
+    closeLightbox.addEventListener('click', closePreview);
+    lightbox.addEventListener('click', (event) => { if (event.target === lightbox) closePreview(); });
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && !lightbox.hidden) closePreview(); });
+  </script>
 </body>
 </html>
