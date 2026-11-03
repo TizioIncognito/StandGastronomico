@@ -43,6 +43,13 @@
     .checklist li { margin:8px 0; }
     .shot-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
     .shot-grid img { width:100%; border:1px solid #d4dce3; border-radius:10px; box-shadow:0 4px 14px #102a4322; }
+	.spec-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+	.spec-item { padding:20px; border:1px solid #e3e8ed; border-radius:12px; background:var(--white); }
+	.spec-item strong { display:block; margin-bottom:5px; color:var(--navy); }
+	.faq-list { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+	.faq-item { padding:20px; border-radius:12px; background:var(--cream); }
+	.faq-item h3 { margin:0 0 8px; color:var(--navy); font-size:1.08rem; }
+	.faq-item p { margin:0; color:var(--muted); }
     .previewable { cursor:zoom-in; transition:transform .2s ease, box-shadow .2s ease; }
     @media (hover:hover) { .previewable:hover { transform:scale(1.025); box-shadow:0 12px 26px #00152855; } }
     .lightbox[hidden] { display:none; }
@@ -58,7 +65,12 @@
     .support .button { margin-top:22px; border-color:var(--navy); background:var(--navy); color:var(--white); }
     footer { padding:28px 0; color:#dbe7ef; background:#081b2c; text-align:center; font-size:.92rem; }
     footer a { color:#fff; }
-    @media (max-width:760px) { .hero .wrap,.two { grid-template-columns:1fr; } .grid { grid-template-columns:1fr; } .shot-grid { grid-template-columns:1fr 1fr; } .hero .wrap { padding:52px 0; } }
+    @media (max-width:760px) {
+		.hero .wrap,.two { grid-template-columns:1fr; }
+		.grid,.spec-grid,.faq-list { grid-template-columns:1fr; }
+		.shot-grid { grid-template-columns:1fr 1fr; }
+		.hero .wrap { padding:52px 0; }
+	}
   </style>
 </head>
 <body>
@@ -119,6 +131,89 @@
         </div>
       </div>
     </section>
+	
+	<section class="alt">
+	  <div class="wrap">
+		<h2>Caratteristiche tecniche</h2>
+		<p>Un programma pensato per essere semplice da distribuire e utilizzare, senza servizi online o infrastrutture da configurare.</p>
+
+		<div class="spec-grid">
+		  <article class="spec-item">
+			<strong>Sistema operativo</strong>
+			Windows 10 e Windows 11, 64 bit.
+		  </article>
+
+		  <article class="spec-item">
+			<strong>Distribuzione portable</strong>
+			Si utilizza estraendo il pacchetto ZIP: non serve un installer.
+		  </article>
+
+		  <article class="spec-item">
+			<strong>Runtime incluso</strong>
+			Il pacchetto include il runtime .NET necessario all'applicazione.
+		  </article>
+
+		  <article class="spec-item">
+			<strong>Utilizzo offline</strong>
+			Non richiede connessione Internet, account o abbonamenti per le normali attività.
+		  </article>
+
+		  <article class="spec-item">
+			<strong>Stampa</strong>
+			La stampa degli ordini richiede Microsoft Edge WebView2 Runtime.
+		  </article>
+
+		  <article class="spec-item">
+			<strong>Esportazione</strong>
+			Le statistiche possono essere esportate in formato Excel.
+		  </article>
+		</div>
+	  </div>
+	</section>
+
+	<section>
+	  <div class="wrap">
+		<h2>Domande frequenti</h2>
+
+		<div class="faq-list">
+		  <article class="faq-item">
+			<h3>Stand Gastronomico è gratuito?</h3>
+			<p>Sì. Il programma è gratuito e non prevede abbonamenti. Il supporto tramite Ko-fi è facoltativo.</p>
+		  </article>
+
+		  <article class="faq-item">
+			<h3>È necessario avere una connessione Internet?</h3>
+			<p>No. Le funzioni del programma sono disponibili offline; non servono account o servizi cloud.</p>
+		  </article>
+
+		  <article class="faq-item">
+			<h3>Su quali computer funziona?</h3>
+			<p>È pensato per PC con Windows 10 o Windows 11 a 64 bit. Non è disponibile una versione per macOS o Linux.</p>
+		  </article>
+
+		  <article class="faq-item">
+			<h3>Devo installare .NET?</h3>
+			<p>No. Il runtime .NET necessario è già incluso nel pacchetto scaricabile. Per stampare è invece necessario Microsoft Edge WebView2 Runtime.</p>
+		  </article>
+
+		  <article class="faq-item">
+			<h3>Posso utilizzarlo su più casse o computer collegati in rete?</h3>
+			<p>No. Stand Gastronomico è progettato per l'utilizzo su un singolo PC e non offre una gestione multi-cassa o sincronizzazione in rete.</p>
+		  </article>
+
+		  <article class="faq-item">
+			<h3>Posso personalizzare categorie e stampa?</h3>
+			<p>Sì. Puoi modificare le etichette delle categorie e personalizzare il template di stampa seguendo le <a href="configurazione.html">guide disponibili</a>.</p>
+		  </article>
+
+		  <article class="faq-item">
+			<h3>Posso esportare i dati delle vendite?</h3>
+			<p>Sì. La schermata Statistiche permette di esportare i dati in Excel.</p>
+		  </article>
+		</div>
+	  </div>
+	</section>
+
     <section class="cta">
       <div class="wrap">
         <h2>Gratuito, senza account, senza telemetria</h2>
