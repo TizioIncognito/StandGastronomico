@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tizioincognito.github.io/StandGastronomico/sitemap.xml
