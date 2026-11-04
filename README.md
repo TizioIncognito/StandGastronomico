@@ -95,14 +95,14 @@ Le modifiche non richiedono di ricompilare l'applicazione.
 
 La cartella `Config` si apre direttamente dalla schermata **Informazioni**, con il pulsante **Apri cartella Config**.
 
-Per maggiori informazioni consulta la [guida alla configurazione](docs/CONFIGURAZIONE.md).
+Per maggiori informazioni consulta la [guida alla configurazione](documentazione/CONFIGURAZIONE.md).
 
 ## 📖 Documentazione
 
 - [Guida utente](GUIDA_UTENTE.pdf)
 - [Guida utente online](https://tizioincognito.github.io/StandGastronomico/guida.html)
-- [Personalizzazione e configurazione](docs/CONFIGURAZIONE.md)
-- [Personalizzazione dei template di stampa](docs/TEMPLATE_STAMPA.md)
+- [Personalizzazione e configurazione](documentazione/CONFIGURAZIONE.md)
+- [Personalizzazione dei template di stampa](documentazione/TEMPLATE_STAMPA.md)
 - [Verifica dell'integrità del download](SHA256SUMS.txt)
 - [Cronologia delle versioni](CHANGELOG.md)
 
