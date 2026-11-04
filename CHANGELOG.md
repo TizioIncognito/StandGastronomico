@@ -2,6 +2,12 @@
 
 Tutte le modifiche rilevanti per gli utenti vengono riportate in questo file.
 
+## [1.1.0.0] - 2026-11-04
+
+### Novità
+
+- Pulsante **Apri cartella Config** nella schermata Informazioni, per raggiungere direttamente i file di configurazione.
+
 ## [1.0.0] - 2026-11-02
 
 ### Prima versione pubblica

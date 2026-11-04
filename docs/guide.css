@@ -25,10 +25,9 @@ th,td { padding:11px 12px; text-align:left; border:1px solid var(--line); }
 th { color:var(--white); background:var(--navy); }
 tr:nth-child(even) { background:#f7fafc; }
 .notice { margin:24px 0; padding:16px 18px; border-left:5px solid var(--gold); border-radius:0 8px 8px 0; background:#fff5dc; }
-.warning-shot { display:block; width:min(100%,657px); margin:24px auto; border:1px solid var(--line); border-radius:8px; box-shadow:0 5px 20px #102a4325; }
 .next { display:flex; flex-wrap:wrap; gap:12px; margin-top:42px; }
 .button { display:inline-block; padding:10px 14px; border:2px solid var(--gold); border-radius:8px; background:var(--gold); color:#1c2630; font-weight:700; text-decoration:none; }
 .button.alt { background:var(--white); color:#075b9d; }
 footer { padding:25px 0; color:#dbe7ef; background:#081b2c; text-align:center; font-size:.9rem; }
 footer a { color:#fff; }
-@media (max-width:600px) { .topbar { align-items:flex-start; flex-direction:column; } article { padding:24px; } th,td { padding:9px; } }
+@media (max-width:600px) { .topbar { align-items:flex-start; flex-direction:column; } .topbar nav { width:100%; } article { padding:24px; } th,td { padding:9px; } }

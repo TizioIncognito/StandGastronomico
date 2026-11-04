@@ -19,6 +19,7 @@
     * { box-sizing:border-box; }
     body { margin:0; color:var(--ink); font-family:Segoe UI,Arial,sans-serif; line-height:1.55; background:var(--cream); }
     a { color:#075b9d; }
+    code { padding:1px 5px; border-radius:4px; background:#edf3f7; color:#13334f; font-family:Consolas,"Courier New",monospace; font-size:.92em; }
     .hero { color:var(--white); background:linear-gradient(135deg,#09213f,#164e78 58%,#bb6810); }
     .wrap { width:min(1120px,calc(100% - 40px)); margin:auto; }
     .hero .wrap { display:grid; grid-template-columns:1.15fr .85fr; gap:42px; align-items:center; padding:76px 0; }
@@ -99,6 +100,7 @@
         <div class="buttons">
           <a class="button" href="https://github.com/TizioIncognito/StandGastronomico/releases/latest">Scarica l'ultima versione</a>
           <a class="button secondary" href="https://github.com/TizioIncognito/StandGastronomico">Apri il progetto su GitHub</a>
+          <a class="button secondary" href="guida.html">Guida utente</a>
           <a class="button donate" href="https://ko-fi.com/tizioincognito">Sostieni su Ko-fi</a>
         </div>
       </div>
@@ -134,7 +136,7 @@
         <div>
           <h2>Fatta per essere adattata al tuo stand</h2>
           <p>Puoi modificare le etichette delle cinque categorie e il layout della stampa degli ordini senza ricompilare il programma.</p>
-          <p><a href="configurazione.html">Guida alla configurazione</a> · <a href="template-stampa.html">Template di stampa</a> · <a href="primo-avvio.html">Primo avvio e avviso di Windows</a> · <a href="https://github.com/TizioIncognito/StandGastronomico/blob/master/GUIDA_UTENTE.pdf">Guida utente PDF</a></p>
+          <p><a href="configurazione.html">Guida alla configurazione</a> · <a href="template-stampa.html">Template di stampa</a> · <a href="guida.html">Guida utente</a> · <a href="https://github.com/TizioIncognito/StandGastronomico/blob/master/GUIDA_UTENTE.pdf">Guida in PDF</a></p>
         </div>
       </div>
     </section>
@@ -226,6 +228,10 @@
 		  <article class="faq-item">
 			<h3>Posso esportare i dati delle vendite?</h3>
 			<p>Sì. La schermata Statistiche permette di esportare i dati in Excel.</p>
+		  </article>
+		  <article class="faq-item">
+			<h3>Come verifico che il download sia integro?</h3>
+			<p>Confronta l'impronta SHA-256 dello ZIP con quella riportata in <a href="https://github.com/TizioIncognito/StandGastronomico/blob/master/SHA256SUMS.txt">SHA256SUMS.txt</a>. In PowerShell, nella cartella che contiene lo ZIP, esegui <code>Get-FileHash -Algorithm SHA256 .\StandGastronomico-*-win-x64.zip</code>.</p>
 		  </article>
 		</div>
 	  </div>

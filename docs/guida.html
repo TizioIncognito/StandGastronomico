@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guida utente | Stand Gastronomico</title>
+  <meta name="description" content="Guida rapida all'uso di Stand Gastronomico: cassa e ordini, listino, varianti, magazzino, statistiche, sessioni, menu per evento e cartella di configurazione.">
+  <link rel="stylesheet" href="guide.css">
+  <style>
+    .download { display:flex; flex-wrap:wrap; gap:10px; margin:0 0 26px; }
+    .guide-toc {
+      display:flex; flex-wrap:wrap; gap:6px 16px;
+      margin:0 0 30px; padding:14px 16px;
+      border:1px solid var(--line); border-radius:10px; background:var(--white);
+      font-size:.93rem;
+    }
+    .guide-toc strong { color:var(--navy); margin-right:2px; }
+    .guide-toc a { text-decoration:none; }
+    section { scroll-margin-top:20px; }
+    section + section { margin-top:54px; padding-top:12px; border-top:1px solid #e4eaf0; }
+    h3 { margin:26px 0 10px; font-size:1.12rem; line-height:1.25; color:var(--navy); }
+    figure { margin:22px 0 8px; }
+    img.shot {
+      display:block; width:100%; height:auto;
+      border:1px solid var(--line); border-radius:10px;
+      box-shadow:0 6px 18px #102a4314; background:var(--white);
+      cursor:zoom-in;
+    }
+    figcaption { margin-top:9px; text-align:center; font-size:.84rem; font-style:italic; color:var(--muted); }
+    .closing { font-size:.93rem; color:var(--muted); }
+    .updated { margin-top:8px !important; font-size:.95rem !important; color:#dbe7ef; }
+    .kicker { display:none; }
+    .lightbox[hidden] { display:none; }
+    .lightbox { position:fixed; z-index:10; inset:0; display:grid; place-items:center; padding:24px; background:#061523e8; cursor:zoom-out; }
+    .lightbox img { max-width:min(1400px,94vw); max-height:86vh; border-radius:8px; box-shadow:0 18px 55px #000a; cursor:default; }
+    .lightbox button { position:fixed; top:20px; right:20px; width:42px; height:42px; border:0; border-radius:50%; background:var(--white); color:var(--navy); font-size:1.8rem; line-height:1; cursor:pointer; }
+
+    @media print {
+      @page { size:A4; margin:16mm 16mm 14mm; }
+      html, body { background:#fff; }
+      header { background:#fff !important; color:#1f4e79; }
+      .topbar { display:none !important; }
+      .kicker { display:block !important; margin:0 0 3mm; font-size:11pt; font-weight:600; color:#1f4e79; }
+      .intro { padding:22mm 0 4mm !important; }
+      .intro h1 { margin:0 0 4mm; font-size:30pt; letter-spacing:-.4pt; color:#1f4e79; }
+      .intro p { max-width:none; margin:0 0 2mm; font-size:12pt; font-style:italic; color:#6b7783; }
+      .intro p.kicker { margin:0 0 3mm; font-size:11pt; font-style:normal; font-weight:600; color:#1f4e79; }
+      .intro .updated { margin:0 0 9mm !important; font-size:9.5pt !important; font-style:normal; color:#6b7783; }
+      main { padding:0 !important; }
+      .wrap { width:auto !important; }
+      article { padding:0 !important; border-radius:0 !important; box-shadow:none !important; background:#fff !important; }
+      .download, .guide-toc, .lightbox, footer { display:none !important; }
+      section { break-before:page; page-break-before:always; margin:0 !important; padding:0 !important; border:0 !important; }
+      #introduzione { break-before:auto; page-break-before:auto; }
+      h2 { margin:0 0 4mm; font-size:20pt; line-height:1.15; letter-spacing:-.2pt; color:#1f4e79; }
+      h3 { margin:6.5mm 0 2.5mm; font-size:13pt; line-height:1.2; color:#2e75b6; }
+      p, li { max-width:none; font-size:10.5pt; line-height:1.5; }
+      p { margin:0 0 3mm; }
+      ul, ol { margin:0 0 3mm; padding-left:5.5mm; }
+      li { margin:0 0 1.7mm; }
+      figure { margin:0 0 2mm; break-inside:avoid; }
+      img.shot { width:100%; border:1px solid #d4dce3; border-radius:2px; box-shadow:none; }
+      figcaption { margin-top:2mm; font-size:8.5pt; color:#6b7783; }
+      .notice { margin:5mm 0 0; padding:3.2mm 4mm; background:#eaf3fb; border-left:3pt solid #1f4e79; border-radius:0 6px 6px 0; color:#1f4e79; font-size:9.8pt; line-height:1.5; break-inside:avoid; }
+      table { margin:0 0 6mm; table-layout:fixed; border-collapse:collapse; }
+      th, td { border:0; }
+      th { padding:2.7mm 3mm; background:#1f4e79 !important; color:#fff !important; font-size:10.5pt; }
+      td { padding:2.5mm 3mm; font-size:10.5pt; border-bottom:.6pt solid #d9e2ea; }
+      th:first-child, td:first-child { width:42%; }
+      tbody tr:last-child td { border-bottom:.6pt solid #1f4e79; }
+      tbody tr:nth-child(even) { background:#fff !important; }
+      .closing { font-size:9.5pt; color:#6b7783; }
+      a { color:inherit; text-decoration:none; }
+      code { padding:0; background:transparent; color:#13334f; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap topbar">
+      <a href="index.html"><strong>Stand Gastronomico</strong></a>
+      <nav> <a href="index.html">Home</a> <a href="guida.html" aria-current="page">Guida</a> <a href="configurazione.html">Configurazione</a> <a href="template-stampa.html">Template di stampa</a> <a href="https://github.com/TizioIncognito/StandGastronomico">GitHub</a> </nav>
+    </div>
+    <div class="wrap intro">
+      <p class="kicker">Stand Gastronomico</p>
+      <h1>Guida utente</h1>
+      <p>Guida rapida per chi utilizza il programma durante il servizio.</p>
+      <p class="updated">Aggiornata il 4 novembre 2026.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <article>
+      <div class="download">
+        <a class="button" href="https://github.com/TizioIncognito/StandGastronomico/blob/master/GUIDA_UTENTE.pdf">Scarica la guida in PDF</a>
+        <a class="button alt" href="https://github.com/TizioIncognito/StandGastronomico/releases/latest">Apri le release</a>
+      </div>
+
+      <nav class="guide-toc" aria-label="Indice della guida">
+        <strong>Vai a:</strong>
+        <a href="#cassa">Cassa</a>
+        <a href="#listino">Listino</a>
+        <a href="#varianti">Varianti</a>
+        <a href="#magazzino">Magazzino</a>
+        <a href="#statistiche">Statistiche</a>
+        <a href="#sessioni">Sessioni</a>
+        <a href="#menu-evento">Menu per evento</a>
+        <a href="#informazioni">Informazioni</a>
+        <a href="#riferimento">Riferimento rapido</a>
+      </nav>
+
+      <section id="introduzione">
+        <h3>A cosa serve</h3>
+        <p>Gestire il servizio dello stand: ordini, prodotti, varianti, scorte, sessioni, statistiche e configurazioni del menu.</p>
+
+        <h3>Le schermate</h3>
+        <ul>
+          <li><strong>Cassa</strong> – creare, modificare e stampare gli ordini.</li>
+          <li><strong>Listino</strong> – prodotti, prezzi, varianti associate e relativi supplementi.</li>
+          <li><strong>Varianti</strong> – archivio delle preparazioni alternative.</li>
+          <li><strong>Magazzino</strong> – porzioni disponibili di prodotti e varianti.</li>
+          <li><strong>Statistiche</strong> – vendite, incassi ed esportazione in Excel.</li>
+          <li><strong>Sessioni</strong> – turni di servizio e relativi ordini.</li>
+          <li><strong>Menu per evento</strong> – configurazioni salvate dei prodotti e delle varianti attive.</li>
+          <li><strong>Informazioni</strong> – versione del programma, collegamenti e apertura della cartella Config.</li>
+        </ul>
+
+        <h3>Procedura rapida per un servizio</h3>
+        <ol>
+          <li><strong>Sessioni</strong> – creare o attivare la sessione del servizio.</li>
+          <li><strong>Listino</strong> – controllare prodotti, prezzi, varianti e supplementi.</li>
+          <li><strong>Magazzino</strong> – impostare le porzioni disponibili quando necessario.</li>
+          <li><strong>Cassa</strong> – creare gli ordini, indicare il cliente e salvarli.</li>
+          <li><strong>Stampa</strong> – stampare gli ordini salvati quando serve.</li>
+          <li><strong>Statistiche</strong> – controllare gli incassi ed esportarli in Excel se necessario.</li>
+        </ol>
+
+        <div class="notice">Prima di lavorare: per creare un ordine deve esserci una sessione attiva. Il salvataggio registra la vendita e aggiorna le scorte; la stampa è un'operazione separata.</div>
+      </section>
+
+      <section id="cassa">
+        <h2>1. Cassa – creare un ordine</h2>
+        <p>È la schermata principale durante il servizio. I prodotti sono a sinistra e l'ordine in corso a destra.</p>
+        <figure>
+          <img class="shot" src="images/CreaOrdini.png" alt="Schermata Cassa con un ordine in corso">
+          <figcaption>Schermata Cassa</figcaption>
+        </figure>
+
+        <h3>Creare un ordine</h3>
+        <ul>
+          <li>Controllare che la sessione corretta sia attiva, poi premere <strong>Nuovo ordine</strong>.</li>
+          <li>Inserire il <strong>Cliente</strong>: il nome è obbligatorio per salvare.</li>
+          <li>Fare clic sui prodotti desiderati. Se richiesto, scegliere la variante.</li>
+          <li>Cliccando di nuovo lo stesso prodotto con la stessa variante, la quantità aumenta sulla stessa riga.</li>
+          <li>Controllare il totale e premere <strong>Salva</strong>.</li>
+        </ul>
+        <p>Le righe sono raggruppate per categoria: Bar, Primi, Secondi, Fritti, Griglia.</p>
+        <p>Il prezzo unitario è il prezzo base del prodotto più il supplemento della variante <strong>per quel prodotto</strong>. Lo stesso ragù può costare 0,50 € sui ravioli e 1,00 € sulla polenta.</p>
+
+        <div class="notice">Se non c'è una sessione attiva, cliccando un prodotto o <strong>Nuovo ordine</strong> compare un avviso: creare o attivare una sessione dalla schermata Sessioni.</div>
+      </section>
+
+      <section id="cassa-ordini">
+        <h2>Cassa – ordini già registrati</h2>
+        <ul>
+          <li>Il numero in alto è modificabile: inserirlo e premere <strong>Invio</strong> per aprire l'ordine nella sessione attiva.</li>
+          <li>Le frecce <strong>&lt;</strong> e <strong>&gt;</strong> passano da un ordine all'altro della sessione.</li>
+          <li>Un ordine della sessione attiva può essere modificato e salvato di nuovo.</li>
+          <li>Un ordine di una sessione precedente si può vedere e ristampare, ma non modificare.</li>
+          <li>Un ordine registrato non si elimina: gli errori si correggono modificandolo.</li>
+          <li>La data e l'ora indicano l'ultimo salvataggio; la stampa non le cambia.</li>
+        </ul>
+
+        <h3>Stampa</h3>
+        <ul>
+          <li><strong>Stampa</strong> invia direttamente l'ordine alla stampante predefinita, senza anteprima.</li>
+          <li>Il pulsante è attivo solo per un ordine salvato e senza modifiche non salvate.</li>
+          <li>Dopo una stampa riuscita la Cassa si svuota e parte con un ordine nuovo.</li>
+          <li>Se non c'è una sessione attiva, l'ordine stampato resta a schermo.</li>
+        </ul>
+        <p>Un foglio A4 con riepilogo completo e sezioni operative PRIMI, SECONDI, FRITTI e GRIGLIA. Il Bar compare nel riepilogo.</p>
+
+        <div class="notice">Attenzione: una bozza non salvata non viene registrata e non modifica il magazzino.</div>
+      </section>
+
+      <section id="listino">
+        <h2>2. Listino – prodotti e prezzi</h2>
+        <p>Qui si configurano i prodotti vendibili e l'ordine con cui compaiono in Cassa.</p>
+        <figure>
+          <img class="shot" src="images/Listino.png" alt="Schermata Listino con prodotti e varianti associate">
+          <figcaption>Schermata Listino</figcaption>
+        </figure>
+
+        <h3>Prodotti</h3>
+        <ul>
+          <li>Le categorie sono fisse: Bar, Primi, Secondi, Fritti, Griglia.</li>
+          <li>Per ogni prodotto si gestiscono descrizione, categoria, prezzo base e casella <strong>Attivo</strong>.</li>
+          <li>Un prodotto non attivo non compare in Cassa.</li>
+          <li>Con <strong>Sposta su</strong> e <strong>Sposta giù</strong> si cambia l'ordine nella categoria; la Cassa usa lo stesso ordine.</li>
+          <li><strong>Salva modifiche</strong> salva il prodotto e le associazioni alle varianti.</li>
+        </ul>
+
+        <h3>Varianti e supplementi</h3>
+        <ul>
+          <li>Le varianti compatibili si associano nella sezione <strong>Varianti associate</strong>. Una variante può essere impostata come predefinita per quel prodotto.</li>
+          <li>Il supplemento si digita nella riga della variante associata e vale solo per quel prodotto. La stessa variante può avere supplementi diversi da un prodotto all'altro: è il caso del ragù sui ravioli e sulla polenta.</li>
+        </ul>
+
+        <div class="notice">Consiglio: prima del servizio controllare prodotti attivi, prezzi, varianti e ordine dei prodotti.</div>
+      </section>
+
+      <section id="varianti">
+        <h2>3. Varianti – archivio delle preparazioni</h2>
+        <p>Le varianti sono preparazioni alternative che possono essere scelte per un prodotto, ad esempio Ragù oppure Olio e formaggio.</p>
+        <figure>
+          <img class="shot" src="images/Varianti.png" alt="Schermata Varianti con l'archivio delle preparazioni">
+          <figcaption>Schermata Varianti</figcaption>
+        </figure>
+        <ul>
+          <li>Ogni variante ha una descrizione e lo stato <strong>Attivo</strong>.</li>
+          <li>Il supplemento non si imposta qui: è un dato del prodotto e si digita nel Listino.</li>
+          <li>L'archivio è generale: la stessa variante può essere usata da più prodotti.</li>
+          <li>Le associazioni tra varianti e prodotti si configurano dal Listino.</li>
+          <li>Una variante inattiva non viene proposta in Cassa.</li>
+          <li>Una variante esaurita viene mostrata come <strong>Esaurita</strong>, ma non può essere scelta.</li>
+        </ul>
+
+        <h3>Rimuovere una variante</h3>
+        <ul>
+          <li><strong>Rimuovi</strong> toglie la variante da tutti i prodotti.</li>
+          <li>Se non è mai stata usata in un ordine, viene eliminata dall'archivio.</li>
+          <li>Se è già stata usata, viene disattivata e resta in archivio: gli ordini già registrati restano corretti.</li>
+          <li>Un prodotto che resta senza varianti diventa vendibile al prezzo base.</li>
+        </ul>
+
+        <div class="notice">Il supplemento si imposta nel Listino, sulla riga della variante associata al prodotto.</div>
+      </section>
+
+      <section id="magazzino">
+        <h2>4. Magazzino – controllare le scorte</h2>
+        <p>Permette di impostare quante porzioni sono ancora vendibili per prodotti e varianti.</p>
+        <figure>
+          <img class="shot" src="images/Magazzino.png" alt="Schermata Magazzino con le porzioni disponibili">
+          <figcaption>Schermata Magazzino</figcaption>
+        </figure>
+        <ul>
+          <li>Sono disponibili due schede: <strong>Prodotti</strong> e <strong>Varianti</strong>.</li>
+          <li>Fare doppio clic sulla cella della disponibilità, modificare il valore e premere <strong>Invio</strong>; <strong>Esc</strong> annulla.</li>
+          <li>Cella vuota = disponibilità illimitata.</li>
+          <li>Numero intero positivo = porzioni ancora vendibili.</li>
+          <li>0 = esaurito e non vendibile.</li>
+        </ul>
+
+        <div class="notice">La scorta viene scalata solo quando l'ordine viene salvato. Se la quantità disponibile non basta, il salvataggio viene bloccato.</div>
+      </section>
+
+      <section id="statistiche">
+        <h2>5. Statistiche – vendite e incassi</h2>
+        <p>Permette di consultare i risultati di una sessione e di esportarli in un file Excel.</p>
+        <figure>
+          <img class="shot" src="images/Statistiche.png" alt="Schermata Statistiche con la tabella delle vendite">
+          <figcaption>Schermata Statistiche</figcaption>
+        </figure>
+        <ul>
+          <li>Selezionare la sessione da analizzare.</li>
+          <li>La tabella raggruppa le vendite per prodotto e variante.</li>
+          <li>Le colonne sono Nome, Quantità, Prezzo unitario e Prezzo totale.</li>
+          <li>Il prezzo unitario è quello applicato alla vendita, compresi gli eventuali supplementi.</li>
+          <li>In fondo viene mostrato il totale complessivo degli incassi.</li>
+          <li>I dati provengono dagli ordini salvati della sessione.</li>
+        </ul>
+
+        <h3>Esportare in Excel</h3>
+        <p>Premere <strong>Esporta in Excel</strong>, scegliere percorso e nome del file nella finestra di Windows e confermare. Viene creato un file <code>.xlsx</code>; Excel non deve essere installato.</p>
+        <p>Il file contiene un foglio chiamato <strong>Statistiche</strong>, con la sessione analizzata, la tabella di nome, quantità, prezzo unitario e prezzo totale, e il totale incassi. Gli importi sono numerici e formattati in euro.</p>
+      </section>
+
+      <section id="sessioni">
+        <h2>6. Sessioni – organizzare i servizi</h2>
+        <p>Una sessione rappresenta un servizio o un turno, per esempio Pranzo o Cena. Ogni ordine appartiene alla sessione nella quale è stato creato.</p>
+        <figure>
+          <img class="shot" src="images/Sessioni.png" alt="Schermata Sessioni con i turni di servizio">
+          <figcaption>Schermata Sessioni</figcaption>
+        </figure>
+        <ul>
+          <li>Per creare una sessione inserire il <strong>Nome sessione</strong> e premere <strong>Crea nuova sessione</strong>; la data è automatica.</li>
+          <li>La nuova sessione diventa automaticamente attiva.</li>
+          <li>Con <strong>Attiva sessione</strong> e <strong>Disattiva sessione</strong> si cambia lo stato della sessione selezionata.</li>
+          <li>Una sessione disattivata conserva ordini, vendite e statistiche, ma i suoi ordini sono di sola lettura.</li>
+          <li><strong>Elimina</strong> rimuove la sessione e i suoi ordini, dopo conferma.</li>
+          <li>Può esserci al massimo una sessione attiva. Se non ce n'è una, non si creano nuovi ordini.</li>
+        </ul>
+
+        <div class="notice">Se si cambia sessione con una bozza non salvata, il programma chiede se scartarla. Annullando, si resta nella sessione corrente.</div>
+      </section>
+
+      <section id="menu-evento">
+        <h2>7. Menu per evento – richiamare una configurazione</h2>
+        <p>Salva una fotografia dello stato <strong>Attivo</strong> di prodotti e varianti e la richiama in seguito, per esempio per un nuovo periodo o una nuova festa.</p>
+        <figure>
+          <img class="shot" src="images/MenuEvento.png" alt="Schermata Menu per evento con le configurazioni salvate">
+          <figcaption>Schermata Menu per evento</figcaption>
+        </figure>
+        <ul>
+          <li><strong>Salva come nuovo evento</strong> salva la configurazione <strong>Attivo</strong> presente in Listino e Varianti.</li>
+          <li><strong>Sovrascrivi evento selezionato</strong> aggiorna un evento già salvato.</li>
+          <li><strong>Applica al listino e alle varianti</strong> riporta gli stati <strong>Attivo</strong> alla configurazione memorizzata.</li>
+          <li><strong>Rinomina</strong> modifica nome e note dell'evento.</li>
+          <li><strong>Elimina</strong> elimina la configurazione salvata, dopo conferma.</li>
+        </ul>
+
+        <div class="notice">Applicare un evento modifica soltanto gli stati Attivo: non cambia prezzi, descrizioni, categorie, ordine dei prodotti, magazzino, ordini, sessioni o statistiche.</div>
+      </section>
+
+      <section id="informazioni">
+        <h2>8. Informazioni – aprire la cartella Config</h2>
+        <p>La scheda <strong>Informazioni</strong> raccoglie la versione del programma, i contatti, i collegamenti e le informazioni sulla licenza.</p>
+        <figure>
+          <img class="shot" src="images/Informazioni.png" alt="Schermata Informazioni con versione, contatti e pulsante Apri cartella Config">
+          <figcaption>Schermata Informazioni</figcaption>
+        </figure>
+        <ul>
+          <li>Mostra la <strong>versione</strong> installata: utile quando si segnala un problema.</li>
+          <li>Contatti, sito del progetto e guida utente si aprono con un clic.</li>
+          <li><strong>Apri cartella Config</strong> apre la cartella con <code>categories.json</code> e i template di stampa.</li>
+          <li>Le etichette delle categorie si leggono all'avvio: dopo una modifica, chiudere e riaprire il programma.</li>
+          <li>I template di stampa vengono riletti a ogni stampa: non serve riavviare.</li>
+        </ul>
+
+        <div class="notice">Se <code>categories.json</code> contiene un errore, all'avvio compare un avviso e vengono usate le etichette predefinite.</div>
+      </section>
+
+      <section id="riferimento">
+        <h2>Riferimento rapido</h2>
+        <table>
+          <thead>
+            <tr><th>Cosa devo fare</th><th>Dove</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Creare un nuovo ordine</td><td>Cassa &gt; Nuovo ordine</td></tr>
+            <tr><td>Aprire un ordine</td><td>Cassa &gt; scrivere il numero in alto &gt; Invio</td></tr>
+            <tr><td>Cambiare prezzo o supplemento</td><td>Listino &gt; prodotto &gt; riga della variante</td></tr>
+            <tr><td>Creare una variante</td><td>Varianti &gt; Nuova variante</td></tr>
+            <tr><td>Impostare le scorte</td><td>Magazzino &gt; doppio clic sulla cella</td></tr>
+            <tr><td>Controllare gli incassi</td><td>Statistiche &gt; selezionare la sessione</td></tr>
+            <tr><td>Iniziare o chiudere un servizio</td><td>Sessioni &gt; creare, attivare o disattivare</td></tr>
+            <tr><td>Salvare una configurazione del menu</td><td>Menu per evento &gt; Salva come nuovo evento</td></tr>
+            <tr><td>Aprire la cartella di configurazione</td><td>Informazioni &gt; Apri cartella Config</td></tr>
+          </tbody>
+        </table>
+
+        <p class="closing">Questa guida è un riferimento rapido per l'utilizzo operativo del programma.</p>
+        <p class="closing">Per i dati del listino, i prezzi e le impostazioni del servizio fanno fede le schermate del programma.</p>
+      </section>
+    </article>
+  </main>
+
+  <footer><div class="wrap">Stand Gastronomico · <a href="index.html">Torna alla home</a> · <a href="privacy-stand-gastronomico.html">Privacy policy</a></div></footer>
+
+  <div class="lightbox" id="lightbox" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Anteprima immagine">
+    <button type="button" id="lightbox-close" aria-label="Chiudi anteprima">×</button>
+    <img id="lightbox-image" src="" alt="">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const closeLightbox = document.getElementById('lightbox-close');
+
+    function closePreview() {
+      lightbox.hidden = true;
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImage.src = '';
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.shot').forEach((image) => {
+      image.setAttribute('tabindex', '0');
+      image.setAttribute('role', 'button');
+      image.setAttribute('aria-label', `${image.alt}. Apri ingrandimento`);
+      const openPreview = () => {
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
+        lightbox.hidden = false;
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        closeLightbox.focus();
+      };
+      image.addEventListener('click', openPreview);
+      image.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openPreview();
+        }
+      });
+    });
+
+    closeLightbox.addEventListener('click', closePreview);
+    lightbox.addEventListener('click', (event) => { if (event.target === lightbox) closePreview(); });
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && !lightbox.hidden) closePreview(); });
+  </script>
+</body>
+</html>

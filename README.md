@@ -62,7 +62,15 @@ Stand Gastronomico non richiede una connessione Internet per il normale funziona
 
 **Importante:** evita di estrarre il programma in cartelle protette di Windows, come `Program Files`, se non disponi dei necessari permessi di scrittura.
 
-Al primo avvio Windows può mostrare un avviso SmartScreen perché il programma non è firmato digitalmente. Prosegui solo se hai scaricato il file dalla release ufficiale; trovi istruzioni dettagliate in [Primo avvio e avviso di Windows](docs/SICUREZZA_PRIMO_AVVIO.md).
+### Verifica dell'integrità del download
+
+Il programma non è firmato digitalmente. Se vuoi controllare che il download non sia stato alterato, confronta l'impronta SHA-256 dell'archivio con quella riportata in [`SHA256SUMS.txt`](SHA256SUMS.txt): apri PowerShell nella cartella che contiene lo ZIP ed esegui
+
+```powershell
+Get-FileHash -Algorithm SHA256 .\StandGastronomico-*-win-x64.zip
+```
+
+I due valori devono essere identici. È un controllo facoltativo.
 
 ## 🔄 Aggiornamento
 
@@ -85,14 +93,16 @@ Stand Gastronomico permette di personalizzare alcuni aspetti senza modificare il
 
 Le modifiche non richiedono di ricompilare l'applicazione.
 
+La cartella `Config` si apre direttamente dalla schermata **Informazioni**, con il pulsante **Apri cartella Config**.
+
 Per maggiori informazioni consulta la [guida alla configurazione](docs/CONFIGURAZIONE.md).
 
 ## 📖 Documentazione
 
 - [Guida utente](GUIDA_UTENTE.pdf)
+- [Guida utente online](https://tizioincognito.github.io/StandGastronomico/guida.html)
 - [Personalizzazione e configurazione](docs/CONFIGURAZIONE.md)
 - [Personalizzazione dei template di stampa](docs/TEMPLATE_STAMPA.md)
-- [Primo avvio e avviso di Windows](docs/SICUREZZA_PRIMO_AVVIO.md)
 - [Verifica dell'integrità del download](SHA256SUMS.txt)
 - [Cronologia delle versioni](CHANGELOG.md)
 
