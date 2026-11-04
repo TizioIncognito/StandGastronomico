@@ -25,6 +25,9 @@
     .hero .wrap { display:grid; grid-template-columns:1.15fr .85fr; gap:42px; align-items:center; padding:76px 0; }
     h1,h2,h3 { line-height:1.14; }
     h1 { margin:0 0 18px; font-size:clamp(2.35rem,5vw,4.4rem); letter-spacing:-.04em; }
+    h1 .h1-sub { display:block; margin-top:14px; font-size:.34em; font-weight:600; letter-spacing:-.01em; color:#f7c873; }
+    picture { display:block; }
+    img { max-width:100%; height:auto; }
     h2 { margin:0 0 16px; font-size:clamp(1.7rem,3vw,2.4rem); color:var(--navy); }
     .lead { max-width:650px; margin:0; font-size:1.18rem; }
     .buttons { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
@@ -74,7 +77,7 @@
 		.hero .wrap { padding:52px 0; }
 	}
   </style>
-  <script type="application/ld+json">
+    <script type="application/ld+json">
 	{
 	  "@context": "https://schema.org",
 	  "@type": "SoftwareApplication",
@@ -83,19 +86,39 @@
 	  "url": "https://tizioincognito.github.io/StandGastronomico/",
 	  "applicationCategory": "BusinessApplication",
 	  "operatingSystem": "Windows 10, Windows 11",
+	  "softwareVersion": "1.1.0.0",
+	  "inLanguage": "it",
+	  "downloadUrl": "https://github.com/TizioIncognito/StandGastronomico/releases/download/v1.1.0.0/StandGastronomico-1.1.0.0-win-x64.zip",
+	  "fileSize": "64103857",
+	  "screenshot": "https://tizioincognito.github.io/StandGastronomico/images/CreaOrdini.png",
+	  "license": "https://github.com/TizioIncognito/StandGastronomico/blob/master/LICENSE",
+	  "author": { "@type": "Person", "name": "TizioIncognito", "url": "https://github.com/TizioIncognito" },
 	  "offers": {
 		"@type": "Offer",
 		"price": "0",
-		"priceCurrency": "EUR"
+		"priceCurrency": "EUR",
+		"url": "https://github.com/TizioIncognito/StandGastronomico/releases/latest",
+		"availability": "https://schema.org/InStock"
 	  }
 	}
   </script>
+  <link rel="canonical" href="https://tizioincognito.github.io/StandGastronomico/">
+  <meta property="og:site_name" content="Stand Gastronomico">
+  <meta property="og:image:width" content="1672">
+  <meta property="og:image:height" content="941">
+  <meta property="og:image:alt" content="Stand Gastronomico: schermata della cassa con un ordine in corso">
+  <meta name="twitter:title" content="Stand Gastronomico | Gestionale gratuito per sagre e feste">
+  <meta name="twitter:description" content="Gestionale gratuito e offline per Windows dedicato a sagre, feste ed eventi gastronomici: cassa, ordini, magazzino, statistiche e stampa.">
+  <meta name="twitter:image" content="https://tizioincognito.github.io/StandGastronomico/images/social-preview.jpg">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body>
   <header class="hero">
     <div class="wrap">
       <div>
-        <h1>Stand Gastronomico</h1>
+        <h1>Stand Gastronomico<span class="h1-sub">Gestionale per sagre, feste paesane e stand gastronomici</span></h1>
         <p class="lead">Il gestionale gratuito e offline per organizzare sagre, feste paesane ed eventi gastronomici su Windows.</p>
         <div class="buttons">
           <a class="button" href="https://github.com/TizioIncognito/StandGastronomico/releases/latest">Scarica l'ultima versione</a>
@@ -104,7 +127,7 @@
           <a class="button donate" href="https://ko-fi.com/tizioincognito">Sostieni su Ko-fi</a>
         </div>
       </div>
-      <div class="hero-card"><img class="previewable" src="images/CreaOrdini.png" alt="Schermata Cassa di Stand Gastronomico con un ordine in corso"></div>
+      <div class="hero-card"><picture><source type="image/webp" srcset="images/CreaOrdini.webp"><img class="previewable" src="images/CreaOrdini.png" width="1983" height="1217" decoding="async" alt="Schermata Cassa di Stand Gastronomico con un ordine in corso"></picture></div>
     </div>
   </header>
   <main>
@@ -144,9 +167,9 @@
       <div class="wrap">
         <h2>Le schermate principali</h2>
         <div class="shot-grid">
-          <img class="previewable" src="images/Listino.png" alt="Schermata Listino per prodotti, categorie e prezzi">
-          <img class="previewable" src="images/Magazzino.png" alt="Schermata Magazzino per il controllo delle porzioni disponibili">
-          <img class="previewable" src="images/Statistiche.png" alt="Schermata Statistiche per vendite e incassi">
+          <picture><source type="image/webp" srcset="images/Listino.webp"><img class="previewable" src="images/Listino.png" width="1983" height="1217" loading="lazy" decoding="async" alt="Schermata Listino per prodotti, categorie e prezzi"></picture>
+          <picture><source type="image/webp" srcset="images/Magazzino.webp"><img class="previewable" src="images/Magazzino.png" width="1983" height="1217" loading="lazy" decoding="async" alt="Schermata Magazzino per il controllo delle porzioni disponibili"></picture>
+          <picture><source type="image/webp" srcset="images/Statistiche.webp"><img class="previewable" src="images/Statistiche.png" width="1983" height="1217" loading="lazy" decoding="async" alt="Schermata Statistiche per vendite e incassi"></picture>
         </div>
       </div>
     </section>
