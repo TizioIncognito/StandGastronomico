@@ -49,6 +49,12 @@
     .checklist li { margin:8px 0; }
     .shot-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
     .shot-grid img { width:100%; border:1px solid #d4dce3; border-radius:10px; box-shadow:0 4px 14px #102a4322; }
+    .foglio-home { margin:0 auto; max-width:360px; }
+    .foglio-home img { display:block; width:100%; height:auto; border:1px solid #c9d6e2; border-radius:2px; box-shadow:0 10px 26px #102a431f; }
+    .foglio-home figcaption { margin-top:10px; text-align:center; font-size:.85rem; font-style:italic; color:var(--muted); }
+    .steps { margin:0 0 18px; padding-left:20px; }
+    .steps li { margin:7px 0; }
+    .section-cta { margin:22px 0 0; }
 	.spec-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
 	.spec-item { padding:20px; border:1px solid #e3e8ed; border-radius:12px; background:var(--white); }
 	.spec-item strong { display:block; margin-bottom:5px; color:var(--navy); }
@@ -136,6 +142,28 @@
     </div>
   </header>
   <main>
+    <section class="alt">
+      <div class="wrap two">
+        <div>
+          <h2>Come si usa durante una sagra</h2>
+          <p>Nasce da un'esigenza concreta: l'ho scritto per la nostra associazione e lo uso personalmente durante le sagre. Il flusso è quello di sempre, solo senza fogli volanti e conti a mente.</p>
+          <ol class="steps">
+            <li><strong>Cassa</strong> – prendi l'ordine, salvi e stampi il foglio per la cucina.</li>
+            <li><strong>Cucina</strong> – il cameriere divide il foglio e consegna a ogni reparto la sua parte.</li>
+            <li><strong>Magazzino</strong> – aggiorni a mano le porzioni rimaste, con le indicazioni della cucina.</li>
+            <li><strong>Fine giornata</strong> – esporti quantità e incassi in Excel.</li>
+          </ol>
+          <p class="section-cta"><a class="button" href="come-si-usa.html">Leggi come funziona una serata</a></p>
+        </div>
+        <figure class="foglio-home">
+          <picture>
+            <source type="image/webp" srcset="images/ordine-stampato.webp">
+            <img class="shot" src="images/ordine-stampato.png" width="1190" height="1684" loading="lazy" decoding="async" alt="Foglio d'ordine stampato con il riepilogo e le sezioni per Primi, Secondi, Fritti e Griglia">
+          </picture>
+          <figcaption>Il foglio che va in cucina: riepilogo in alto e una sezione per reparto.</figcaption>
+        </figure>
+      </div>
+    </section>
     <section>
       <div class="wrap">
         <h2>Tutto quello che serve durante il servizio</h2>
