@@ -31,6 +31,7 @@
     h2 { margin:0 0 16px; font-size:clamp(1.7rem,3vw,2.4rem); color:var(--navy); }
     .lead { max-width:650px; margin:0; font-size:1.18rem; }
     .buttons { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+    .buttons-break { flex-basis:100%; height:0; }
     .button { display:inline-block; padding:12px 18px; border:2px solid var(--gold); border-radius:9px; background:var(--gold); color:#1c2630; font-weight:700; text-decoration:none; }
     .button.secondary { background:transparent; color:var(--white); }
     .button.donate { border-color:var(--white); background:var(--white); color:var(--navy); }
@@ -87,6 +88,9 @@
 	  "applicationCategory": "BusinessApplication",
 	  "operatingSystem": "Windows 10, Windows 11",
 	  "softwareVersion": "1.1.0.0",
+	  "installUrl": "https://apps.microsoft.com/detail/9NR1VJFHKFB3",
+	  "sameAs": "https://apps.microsoft.com/detail/9NR1VJFHKFB3",
+	  "softwareHelp": "https://tizioincognito.github.io/StandGastronomico/guida.html",
 	  "inLanguage": "it",
 	  "downloadUrl": "https://github.com/TizioIncognito/StandGastronomico/releases/download/v1.1.0.0/StandGastronomico-1.1.0.0-win-x64.zip",
 	  "fileSize": "64103857",
@@ -121,8 +125,9 @@
         <h1>Stand Gastronomico<span class="h1-sub">Gestionale per sagre, feste paesane e stand gastronomici</span></h1>
         <p class="lead">Il gestionale gratuito e offline per organizzare sagre, feste paesane ed eventi gastronomici su Windows.</p>
         <div class="buttons">
-          <a class="button" href="https://github.com/TizioIncognito/StandGastronomico/releases/latest">Scarica l'ultima versione</a>
-          <a class="button secondary" href="https://github.com/TizioIncognito/StandGastronomico">Apri il progetto su GitHub</a>
+          <a class="button" href="https://apps.microsoft.com/detail/9NR1VJFHKFB3">Scarica da Microsoft Store</a>
+          <a class="button secondary" href="https://github.com/TizioIncognito/StandGastronomico/releases/latest">Scarica lo ZIP portable</a>
+          <span class="buttons-break" aria-hidden="true"></span>
           <a class="button secondary" href="guida.html">Guida utente</a>
           <a class="button donate" href="https://ko-fi.com/tizioincognito">Sostieni su Ko-fi</a>
         </div>
@@ -149,10 +154,10 @@
         <div>
           <h2>Semplice da installare</h2>
           <ul class="checklist">
-            <li>Applicazione portable per Windows 10 e Windows 11 a 64 bit.</li>
-            <li>Runtime .NET incluso: non è necessaria un'installazione aggiuntiva.</li>
+            <li><strong>Microsoft Store</strong>: installazione e aggiornamenti automatici, senza file da gestire.</li>
+            <li><strong>Versione portable (ZIP)</strong>: estrai l'archivio in una cartella scrivibile, ad esempio <code>C:\StandGastronomico</code>.</li>
+            <li>Windows 10 e Windows 11 a 64 bit, runtime .NET incluso.</li>
             <li>Funziona offline e non richiede account o abbonamenti.</li>
-            <li>Estrai lo ZIP in una cartella scrivibile, ad esempio <code>C:\StandGastronomico</code>.</li>
             <li>Per la stampa serve Microsoft Edge WebView2 Runtime.</li>
           </ul>
         </div>
@@ -186,8 +191,8 @@
 		  </article>
 
 		  <article class="spec-item">
-			<strong>Distribuzione portable</strong>
-			Si utilizza estraendo il pacchetto ZIP: non serve un installer.
+			<strong>Distribuzione</strong>
+			Su Microsoft Store, con installazione e aggiornamenti automatici, oppure portable estraendo il pacchetto ZIP.
 		  </article>
 
 		  <article class="spec-item">
@@ -236,6 +241,16 @@
 		  <article class="faq-item">
 			<h3>Devo installare .NET?</h3>
 			<p>No. Il runtime .NET necessario è già incluso nel pacchetto scaricabile. Per stampare è invece necessario Microsoft Edge WebView2 Runtime.</p>
+		  </article>
+
+		  <article class="faq-item">
+			<h3>Dove posso scaricare Stand Gastronomico?</h3>
+			<p>Dal <a href="https://apps.microsoft.com/detail/9NR1VJFHKFB3">Microsoft Store</a>, consigliato perché gli aggiornamenti arrivano da soli, oppure dalle <a href="https://github.com/TizioIncognito/StandGastronomico/releases/latest">release su GitHub</a> in formato ZIP portable.</p>
+		  </article>
+
+		  <article class="faq-item">
+			<h3>Come funzionano gli aggiornamenti?</h3>
+			<p>Con la versione del Microsoft Store si aggiorna da sola. Con la versione portable si scarica il nuovo ZIP e si sostituiscono i file dell'applicazione, senza toccare le cartelle <code>Data</code>, <code>Logs</code> e <code>Config</code>.</p>
 		  </article>
 
 		  <article class="faq-item">
