@@ -11,6 +11,7 @@ header { color:var(--white); background:linear-gradient(135deg,#09213f,#164e78 6
 h1 { margin:0 0 12px; font-size:clamp(2rem,5vw,3.4rem); line-height:1.1; }
 .intro p { max-width:680px; margin:0; font-size:1.12rem; }
 main { padding:48px 0 64px; }
+picture { display:block; }
 article { padding:clamp(24px,5vw,48px); border-radius:16px; background:var(--white); box-shadow:0 4px 18px #102a4315; }
 h2 { margin:42px 0 14px; color:var(--navy); font-size:1.55rem; line-height:1.2; }
 h2:first-child { margin-top:0; }

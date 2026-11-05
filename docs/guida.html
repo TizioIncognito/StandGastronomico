@@ -59,7 +59,7 @@
       ul, ol { margin:0 0 3mm; padding-left:5.5mm; }
       li { margin:0 0 1.7mm; }
       figure { margin:0 0 2mm; break-inside:avoid; }
-      img.shot { width:100%; border:1px solid #d4dce3; border-radius:2px; box-shadow:none; }
+      img.shot { width:100%; height:auto; border:1px solid #d4dce3; border-radius:2px; box-shadow:none; }
       figcaption { margin-top:2mm; font-size:8.5pt; color:#6b7783; }
       .notice { margin:5mm 0 0; padding:3.2mm 4mm; background:#eaf3fb; border-left:3pt solid #1f4e79; border-radius:0 6px 6px 0; color:#1f4e79; font-size:9.8pt; line-height:1.5; break-inside:avoid; }
       table { margin:0 0 6mm; table-layout:fixed; border-collapse:collapse; }
@@ -74,6 +74,34 @@
       code { padding:0; background:transparent; color:#13334f; }
     }
   </style>
+  <link rel="canonical" href="https://tizioincognito.github.io/StandGastronomico/guida.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Stand Gastronomico">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:title" content="Guida utente | Stand Gastronomico">
+  <meta property="og:description" content="Guida rapida all'uso di Stand Gastronomico: cassa e ordini, listino, varianti, magazzino, statistiche, sessioni, menu per evento e cartella di configurazione.">
+  <meta property="og:url" content="https://tizioincognito.github.io/StandGastronomico/guida.html">
+  <meta property="og:image" content="https://tizioincognito.github.io/StandGastronomico/images/social-preview.jpg">
+  <meta property="og:image:width" content="1672">
+  <meta property="og:image:height" content="941">
+  <meta property="og:image:alt" content="Stand Gastronomico: schermata della cassa con un ordine in corso">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Guida utente | Stand Gastronomico">
+  <meta name="twitter:description" content="Guida rapida all'uso di Stand Gastronomico: cassa e ordini, listino, varianti, magazzino, statistiche, sessioni, menu per evento e cartella di configurazione.">
+  <meta name="twitter:image" content="https://tizioincognito.github.io/StandGastronomico/images/social-preview.jpg">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tizioincognito.github.io/StandGastronomico/" },
+        { "@type": "ListItem", "position": 2, "name": "Guida utente", "item": "https://tizioincognito.github.io/StandGastronomico/guida.html" }
+      ]
+    }
+  </script>
 </head>
 <body>
   <header>
@@ -93,7 +121,7 @@
     <article>
       <div class="download">
         <a class="button" href="https://github.com/TizioIncognito/StandGastronomico/blob/master/GUIDA_UTENTE.pdf">Scarica la guida in PDF</a>
-        <a class="button alt" href="https://github.com/TizioIncognito/StandGastronomico/releases/latest">Apri le release</a>
+        <a class="button alt" href="https://apps.microsoft.com/detail/9NR1VJFHKFB3">Apri Microsoft Store</a>
       </div>
 
       <nav class="guide-toc" aria-label="Indice della guida">
@@ -142,7 +170,7 @@
         <h2>1. Cassa – creare un ordine</h2>
         <p>È la schermata principale durante il servizio. I prodotti sono a sinistra e l'ordine in corso a destra.</p>
         <figure>
-          <img class="shot" src="images/CreaOrdini.png" alt="Schermata Cassa con un ordine in corso">
+          <picture><source type="image/webp" srcset="images/CreaOrdini.webp"><img class="shot" src="images/CreaOrdini.png" width="1983" height="1217" decoding="async" alt="Schermata Cassa con un ordine in corso"></picture>
           <figcaption>Schermata Cassa</figcaption>
         </figure>
 
@@ -187,7 +215,7 @@
         <h2>2. Listino – prodotti e prezzi</h2>
         <p>Qui si configurano i prodotti vendibili e l'ordine con cui compaiono in Cassa.</p>
         <figure>
-          <img class="shot" src="images/Listino.png" alt="Schermata Listino con prodotti e varianti associate">
+          <picture><source type="image/webp" srcset="images/Listino.webp"><img class="shot" src="images/Listino.png" width="1983" height="1217" decoding="async" alt="Schermata Listino con prodotti e varianti associate"></picture>
           <figcaption>Schermata Listino</figcaption>
         </figure>
 
@@ -213,7 +241,7 @@
         <h2>3. Varianti – archivio delle preparazioni</h2>
         <p>Le varianti sono preparazioni alternative che possono essere scelte per un prodotto, ad esempio Ragù oppure Olio e formaggio.</p>
         <figure>
-          <img class="shot" src="images/Varianti.png" alt="Schermata Varianti con l'archivio delle preparazioni">
+          <picture><source type="image/webp" srcset="images/Varianti.webp"><img class="shot" src="images/Varianti.png" width="1983" height="1217" decoding="async" alt="Schermata Varianti con l'archivio delle preparazioni"></picture>
           <figcaption>Schermata Varianti</figcaption>
         </figure>
         <ul>
@@ -240,7 +268,7 @@
         <h2>4. Magazzino – controllare le scorte</h2>
         <p>Permette di impostare quante porzioni sono ancora vendibili per prodotti e varianti.</p>
         <figure>
-          <img class="shot" src="images/Magazzino.png" alt="Schermata Magazzino con le porzioni disponibili">
+          <picture><source type="image/webp" srcset="images/Magazzino.webp"><img class="shot" src="images/Magazzino.png" width="1983" height="1217" decoding="async" alt="Schermata Magazzino con le porzioni disponibili"></picture>
           <figcaption>Schermata Magazzino</figcaption>
         </figure>
         <ul>
@@ -258,7 +286,7 @@
         <h2>5. Statistiche – vendite e incassi</h2>
         <p>Permette di consultare i risultati di una sessione e di esportarli in un file Excel.</p>
         <figure>
-          <img class="shot" src="images/Statistiche.png" alt="Schermata Statistiche con la tabella delle vendite">
+          <picture><source type="image/webp" srcset="images/Statistiche.webp"><img class="shot" src="images/Statistiche.png" width="1983" height="1217" decoding="async" alt="Schermata Statistiche con la tabella delle vendite"></picture>
           <figcaption>Schermata Statistiche</figcaption>
         </figure>
         <ul>
@@ -279,7 +307,7 @@
         <h2>6. Sessioni – organizzare i servizi</h2>
         <p>Una sessione rappresenta un servizio o un turno, per esempio Pranzo o Cena. Ogni ordine appartiene alla sessione nella quale è stato creato.</p>
         <figure>
-          <img class="shot" src="images/Sessioni.png" alt="Schermata Sessioni con i turni di servizio">
+          <picture><source type="image/webp" srcset="images/Sessioni.webp"><img class="shot" src="images/Sessioni.png" width="1983" height="1217" decoding="async" alt="Schermata Sessioni con i turni di servizio"></picture>
           <figcaption>Schermata Sessioni</figcaption>
         </figure>
         <ul>
@@ -298,7 +326,7 @@
         <h2>7. Menu per evento – richiamare una configurazione</h2>
         <p>Salva una fotografia dello stato <strong>Attivo</strong> di prodotti e varianti e la richiama in seguito, per esempio per un nuovo periodo o una nuova festa.</p>
         <figure>
-          <img class="shot" src="images/MenuEvento.png" alt="Schermata Menu per evento con le configurazioni salvate">
+          <picture><source type="image/webp" srcset="images/MenuEvento.webp"><img class="shot" src="images/MenuEvento.png" width="1983" height="1217" decoding="async" alt="Schermata Menu per evento con le configurazioni salvate"></picture>
           <figcaption>Schermata Menu per evento</figcaption>
         </figure>
         <ul>
@@ -316,7 +344,7 @@
         <h2>8. Informazioni – aprire la cartella Config</h2>
         <p>La scheda <strong>Informazioni</strong> raccoglie la versione del programma, i contatti, i collegamenti e le informazioni sulla licenza.</p>
         <figure>
-          <img class="shot" src="images/Informazioni.png" alt="Schermata Informazioni con versione, contatti e pulsante Apri cartella Config">
+          <picture><source type="image/webp" srcset="images/Informazioni.webp"><img class="shot" src="images/Informazioni.png" width="1983" height="1217" decoding="async" alt="Schermata Informazioni con versione, contatti e pulsante Apri cartella Config"></picture>
           <figcaption>Schermata Informazioni</figcaption>
         </figure>
         <ul>

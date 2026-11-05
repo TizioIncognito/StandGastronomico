@@ -39,21 +39,26 @@ Permette di gestire gli ordini, il listino, le varianti, il magazzino e gli inca
 
 ## 📥 Download
 
-Scarica l'ultima versione disponibile dalla pagina [Releases](../../releases/latest).
+- **Microsoft Store** (consigliato): [Stand Gastronomico](https://apps.microsoft.com/detail/9NR1VJFHKFB3), con installazione e aggiornamenti automatici.
+- **Versione portable**: scarica l'ultima versione dalla pagina [Releases](../../releases/latest).
 
-Il programma viene distribuito in formato ZIP. Non è necessario installare l'applicazione: basta estrarre l'archivio in una cartella del computer e avviare `StandGastronomico.App.exe`.
+Il pacchetto ZIP è la versione portable: non è necessario installare l'applicazione, basta estrarre l'archivio in una cartella del computer e avviare `StandGastronomico.App.exe`.
 
 ## 💻 Requisiti
 
 - Windows 10 o Windows 11 a 64 bit.
 - Microsoft Edge WebView2 Runtime per la funzionalità di stampa.
-- Una cartella nella quale l'utente abbia i permessi di scrittura.
+- Una cartella con permessi di scrittura (solo versione portable).
 
 Non è necessario installare .NET: il runtime è incluso nel programma.
 
 Stand Gastronomico non richiede una connessione Internet per il normale funzionamento.
 
 ## 🚀 Installazione
+
+**Dal Microsoft Store:** apri la [scheda dell'applicazione](https://apps.microsoft.com/detail/9NR1VJFHKFB3), seleziona **Installa** e avvia il programma dal menu Start. Gli aggiornamenti arrivano automaticamente.
+
+**Versione portable:**
 
 1. Scarica l'archivio ZIP dalla sezione [Releases](../../releases/latest).
 2. Estrai il contenuto in una cartella del computer, ad esempio `C:\StandGastronomico`.
@@ -64,7 +69,7 @@ Stand Gastronomico non richiede una connessione Internet per il normale funziona
 
 ### Verifica dell'integrità del download
 
-Il programma non è firmato digitalmente. Se vuoi controllare che il download non sia stato alterato, confronta l'impronta SHA-256 dell'archivio con quella riportata in [`SHA256SUMS.txt`](SHA256SUMS.txt): apri PowerShell nella cartella che contiene lo ZIP ed esegui
+Se vuoi controllare che il download non sia stato alterato, confronta l'impronta SHA-256 dell'archivio con quella riportata in [`SHA256SUMS.txt`](SHA256SUMS.txt): apri PowerShell nella cartella che contiene lo ZIP ed esegui
 
 ```powershell
 Get-FileHash -Algorithm SHA256 .\StandGastronomico-*-win-x64.zip
@@ -74,13 +79,17 @@ I due valori devono essere identici. È un controllo facoltativo.
 
 ## 🔄 Aggiornamento
 
-Per aggiornare il programma:
+Con la versione del **Microsoft Store** gli aggiornamenti sono automatici: non serve fare nulla.
+
+Per la versione **portable**:
 
 1. Effettua una copia di sicurezza della cartella `Data`.
 2. Scarica la nuova versione dalla sezione Releases.
 3. Sostituisci i file dell'applicazione con quelli della nuova versione.
 
 **Non sovrascrivere le cartelle `Data`, `Logs` e `Config`.**
+
+Nella versione del Microsoft Store le cartelle `Data`, `Logs` e `Config` si trovano nella cartella privata dell'applicazione (`%LOCALAPPDATA%\Packages\<famiglia>\LocalState`), non accanto all'eseguibile.
 
 La cartella `Data` contiene il database con ordini, prodotti, sessioni e statistiche. La cartella `Config` contiene le personalizzazioni effettuate dall'utente.
 
@@ -95,14 +104,14 @@ Le modifiche non richiedono di ricompilare l'applicazione.
 
 La cartella `Config` si apre direttamente dalla schermata **Informazioni**, con il pulsante **Apri cartella Config**.
 
-Per maggiori informazioni consulta la [guida alla configurazione](docs/CONFIGURAZIONE.md).
+Per maggiori informazioni consulta la [guida alla configurazione](documentazione/CONFIGURAZIONE.md).
 
 ## 📖 Documentazione
 
 - [Guida utente](GUIDA_UTENTE.pdf)
 - [Guida utente online](https://tizioincognito.github.io/StandGastronomico/guida.html)
-- [Personalizzazione e configurazione](docs/CONFIGURAZIONE.md)
-- [Personalizzazione dei template di stampa](docs/TEMPLATE_STAMPA.md)
+- [Personalizzazione e configurazione](documentazione/CONFIGURAZIONE.md)
+- [Personalizzazione dei template di stampa](documentazione/TEMPLATE_STAMPA.md)
 - [Verifica dell'integrità del download](SHA256SUMS.txt)
 - [Cronologia delle versioni](CHANGELOG.md)
 
