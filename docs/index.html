@@ -68,9 +68,37 @@
     .lightbox { position:fixed; z-index:10; inset:0; display:grid; place-items:center; padding:24px; background:#061523e8; cursor:zoom-out; }
     .lightbox img { max-width:min(1400px,94vw); max-height:86vh; border-radius:8px; box-shadow:0 18px 55px #000a; cursor:default; }
     .lightbox button { position:fixed; top:20px; right:20px; width:42px; height:42px; border:0; border-radius:50%; background:var(--white); color:var(--navy); font-size:1.8rem; line-height:1; cursor:pointer; }
-    .cta { text-align:center; background:var(--navy); color:var(--white); }
-    .cta h2 { color:var(--white); }
-    .cta p { max-width:690px; margin:0 auto; }
+    .racconto { background:var(--navy); color:var(--white); }
+    .racconto .wrap { padding:62px 0; }
+    .racconto-grid { display:grid; grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr); gap:44px; align-items:start; }
+    .racconto h2 { color:var(--white); margin-top:0; }
+    .racconto-intro p { color:#dbe7ef; max-width:540px; }
+    .racconto-nota { margin-top:18px; font-size:.92rem; color:#b9cddd; }
+    .racconto-alt { margin-top:22px; font-size:.94rem; color:#c9d9e6; }
+    .racconto-alt p { margin:0; }
+    .racconto-alt a { color:#fff; }
+    .racconto-card { background:var(--white); color:var(--ink); border-radius:14px; padding:clamp(20px,3vw,30px); box-shadow:0 18px 45px #0015284d; }
+    .field { margin:0 0 18px; padding:0; border:0; }
+    .field > label, .field legend { display:block; margin:0 0 6px; font-weight:600; font-size:.95rem; color:var(--navy); }
+    .req, .opt { font-weight:400; font-size:.82rem; color:var(--muted); }
+    .req { color:#8a5200; }
+    .racconto-card input[type="text"], .racconto-card input[type="email"], .racconto-card textarea { width:100%; padding:10px 12px; border:1px solid #cbd6e0; border-radius:8px; font:inherit; color:var(--ink); background:#fff; }
+    .racconto-card textarea { resize:vertical; min-height:120px; }
+    .racconto-card input:focus-visible, .racconto-card textarea:focus-visible { outline:3px solid #f59e0b66; outline-offset:1px; border-color:var(--gold); }
+    .check { display:flex; gap:10px; align-items:flex-start; font-size:.92rem; cursor:pointer; }
+    .check input { margin:2px 0 0; accent-color:var(--gold); }
+    .hint { margin:6px 0 0; font-size:.84rem; color:var(--muted); }
+    .racconto-actions { display:flex; flex-wrap:wrap; gap:14px; align-items:center; }
+    .racconto-card .button[type="submit"] { font:inherit; cursor:pointer; }
+    .racconto-card .button[type="submit"]:focus-visible { outline:3px solid #0b5cad66; outline-offset:2px; }
+    .racconto-card .button[disabled] { opacity:.65; cursor:progress; }
+    .racconto-privacy { margin:0; font-size:.82rem; color:var(--muted); max-width:330px; }
+    .form-feedback { margin-top:16px; padding:14px 16px; border-radius:10px; font-size:.94rem; line-height:1.45; }
+    .form-feedback:focus-visible { outline:3px solid #0b5cad66; outline-offset:2px; }
+    #racconto-success { background:#eaf6ee; border:1px solid #bfe0c8; color:#1f5a34; }
+    #racconto-error { background:#fdeceb; border:1px solid #f0c3be; color:#8a2c22; }
+    .hp { position:absolute !important; left:-9999px !important; width:1px; height:1px; overflow:hidden; }
+    @media (max-width:760px) { .racconto-grid { grid-template-columns:1fr; gap:26px; } }
     .support { text-align:center; background:linear-gradient(135deg,#f9c642,#f59e0b); }
     .support h2 { margin-bottom:10px; }
     .support p { max-width:650px; margin:0 auto; }
@@ -83,6 +111,32 @@
 		.shot-grid { grid-template-columns:1fr 1fr; }
 		.hero .wrap { padding:52px 0; }
 	}
+      html { scroll-padding-top: 72px; }
+    @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+    .sitenav { position:fixed; top:0; left:0; right:0; z-index:9; background:#0b2438; border-bottom:1px solid #ffffff1f; transform:translateY(-110%); visibility:hidden; transition:transform .25s ease, visibility .25s; }
+    .sitenav.is-visible { transform:none; visibility:visible; }
+    .sitenav-bar { display:flex; align-items:center; gap:20px; min-height:56px; }
+    .sitenav-brand { color:#fff; font-weight:700; text-decoration:none; }
+    .sitenav-links { display:flex; align-items:center; gap:20px; margin:0 0 0 auto; padding:0; list-style:none; }
+    .sitenav-links a { color:#dbe7ef; text-decoration:none; font-size:.95rem; }
+    .sitenav-links a:hover { color:#fff; text-decoration:underline; }
+    .sitenav-brand:focus-visible, .sitenav-links a:focus-visible, .sitenav-toggle:focus-visible, .sitenav-panel a:focus-visible { outline:3px solid var(--gold); outline-offset:3px; border-radius:4px; }
+    .sitenav-cta { padding:8px 16px; border-radius:999px; background:var(--gold); color:#1c2630 !important; font-weight:700; text-decoration:none; }
+    .sitenav-compact { display:none; margin-left:auto; align-items:center; gap:10px; }
+    .sitenav-toggle { font:inherit; font-size:.9rem; color:#fff; background:transparent; border:1px solid #ffffff66; border-radius:8px; padding:7px 12px; cursor:pointer; }
+    .sitenav-panel { background:#0b2438; border-bottom:1px solid #ffffff1f; }
+    .sitenav-panel-list { width:min(1120px,calc(100% - 40px)); margin:0 auto; padding:6px 0 12px; list-style:none; }
+    .sitenav-panel-list a { display:block; padding:11px 2px; color:#dbe7ef; text-decoration:none; border-bottom:1px solid #ffffff14; }
+    .sitenav-panel-list li:last-child a { border-bottom:0; }
+    @media (max-width:860px) { .sitenav-links { display:none; } .sitenav-compact { display:flex; } }
+    @media (max-width:420px) {
+      .sitenav-bar { gap:10px; }
+      .sitenav-brand { font-size:.88rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; min-width:0; }
+      .sitenav-compact { gap:8px; }
+      .sitenav-cta { padding:6px 12px; font-size:.88rem; }
+      .sitenav-toggle { padding:6px 10px; font-size:.85rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { .sitenav { transition:none; } }
   </style>
     <script type="application/ld+json">
 	{
@@ -124,7 +178,33 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
-<body>
+<body id="top">
+  <nav class="sitenav" id="sitenav" aria-label="Navigazione del sito">
+    <div class="wrap sitenav-bar">
+      <a class="sitenav-brand" href="#top">Stand Gastronomico</a>
+      <ul class="sitenav-links">
+        <li><a href="come-si-usa.html">Come si usa</a></li>
+        <li><a href="guida.html">Guida</a></li>
+        <li><a href="configurazione.html">Configurazione</a></li>
+        <li><a href="#installazione">Scarica</a></li>
+        <li><a class="sitenav-cta" href="#raccontaci">Scrivici</a></li>
+      </ul>
+      <div class="sitenav-compact">
+        <a class="sitenav-cta" href="#raccontaci">Scrivici</a>
+        <button class="sitenav-toggle" type="button" aria-expanded="false" aria-controls="sitenav-panel">Menu</button>
+      </div>
+    </div>
+    <div class="sitenav-panel" id="sitenav-panel" hidden>
+      <ul class="sitenav-panel-list">
+        <li><a href="come-si-usa.html">Come si usa durante una sagra</a></li>
+        <li><a href="guida.html">Guida utente</a></li>
+        <li><a href="configurazione.html">Configurazione</a></li>
+        <li><a href="template-stampa.html">Template di stampa</a></li>
+        <li><a href="#installazione">Scarica</a></li>
+        <li><a href="#domande">Domande frequenti</a></li>
+      </ul>
+    </div>
+  </nav>
   <header class="hero">
     <div class="wrap">
       <div>
@@ -142,7 +222,7 @@
     </div>
   </header>
   <main>
-    <section class="alt">
+    <section class="alt" id="come-si-usa">
       <div class="wrap two">
         <div>
           <h2>Come si usa durante una sagra</h2>
@@ -164,7 +244,7 @@
         </figure>
       </div>
     </section>
-    <section>
+    <section id="funzionalita">
       <div class="wrap">
         <h2>Tutto quello che serve durante il servizio</h2>
         <div class="grid">
@@ -177,7 +257,7 @@
         </div>
       </div>
     </section>
-    <section class="alt">
+    <section class="alt" id="installazione">
       <div class="wrap two">
         <div>
           <h2>Semplice da installare</h2>
@@ -196,7 +276,7 @@
         </div>
       </div>
     </section>
-    <section>
+    <section id="schermate">
       <div class="wrap">
         <h2>Le schermate principali</h2>
         <div class="shot-grid">
@@ -207,7 +287,7 @@
       </div>
     </section>
 	
-	<section class="alt">
+	<section class="alt" id="caratteristiche">
 	  <div class="wrap">
 		<h2>Caratteristiche tecniche</h2>
 		<p>Un programma pensato per essere semplice da distribuire e utilizzare, senza servizi online o infrastrutture da configurare.</p>
@@ -246,7 +326,7 @@
 	  </div>
 	</section>
 
-	<section>
+	<section id="domande">
 	  <div class="wrap">
 		<h2>Domande frequenti</h2>
 
@@ -303,13 +383,58 @@
 	  </div>
 	</section>
 
-    <section class="cta">
+    <section class="racconto" id="raccontaci">
       <div class="wrap">
-        <h2>Gratuito, senza account, senza telemetria</h2>
-        <p>I dati degli ordini rimangono sul tuo computer. Per domande, problemi o suggerimenti puoi usare Issues e Discussions su GitHub.</p>
-        <div class="buttons">
-          <a class="button" href="https://github.com/TizioIncognito/StandGastronomico/issues">Segnala un problema</a>
-          <a class="button secondary" href="https://github.com/TizioIncognito/StandGastronomico/discussions">Partecipa alle discussioni</a>
+        <div class="racconto-grid">
+          <div class="racconto-intro">
+            <h2 id="racconto-title">Raccontaci la tua esperienza</h2>
+            <p>Hai utilizzato Stand Gastronomico nella tua sagra o manifestazione? Hai suggerimenti, hai incontrato qualche problema o semplicemente vuoi raccontarci come ti sei trovato? Ci fa piacere leggerti!</p>
+            <p class="racconto-nota">Gratuito, senza account, senza telemetria: i dati degli ordini restano sul tuo computer. Il modulo serve solo a scriverci.</p>
+            <div class="racconto-alt">
+              <p><strong>Preferisci GitHub?</strong> Puoi anche <a href="https://github.com/TizioIncognito/StandGastronomico/issues">segnalare un problema</a> o <a href="https://github.com/TizioIncognito/StandGastronomico/discussions">partecipare alle discussioni</a>.</p>
+            </div>
+          </div>
+
+          <div class="racconto-card">
+            <form id="racconto-form" action="https://formspree.io/f/xnpprkad" method="POST" aria-labelledby="racconto-title">
+              <input type="hidden" name="_subject" value="Stand Gastronomico — messaggio dal sito">
+              <div class="hp" aria-hidden="true">
+                <label for="hp-field">Non compilare questo campo</label>
+                <input id="hp-field" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="field">
+                <label for="associazione">Nome sagra o associazione <span class="opt">facoltativo</span></label>
+                <input id="associazione" type="text" name="associazione" autocomplete="organization" maxlength="120">
+              </div>
+
+              <div class="field">
+                <label for="messaggio">Messaggio <span class="req">obbligatorio</span></label>
+                <textarea id="messaggio" name="messaggio" rows="6" required maxlength="4000"></textarea>
+              </div>
+
+              <div class="field">
+                <label for="email">Email <span class="opt">facoltativa</span></label>
+                <input id="email" type="email" name="email" autocomplete="email" aria-describedby="email-hint" maxlength="200">
+                <p class="hint" id="email-hint">Se la indichi possiamo risponderti. Non viene pubblicata.</p>
+              </div>
+
+              <div class="field">
+                <label class="check">
+                  <input type="checkbox" name="consenso_pubblicazione" value="sì">
+                  <span>Autorizzo la pubblicazione del messaggio sul sito, anche con il nome dell'associazione indicato. <span class="opt">Facoltativo: senza autorizzazione il messaggio non viene pubblicato.</span></span>
+                </label>
+              </div>
+
+              <div class="racconto-actions">
+                <button type="submit" class="button" id="racconto-submit">Invia il messaggio</button>
+                <p class="racconto-privacy">Inviando il modulo i dati sono trattati come descritto nella <a href="privacy-sito.html">privacy del sito</a>. La pubblicazione non è automatica.</p>
+              </div>
+
+              <div class="form-feedback" id="racconto-success" role="status" aria-live="polite" tabindex="-1" hidden></div>
+              <div class="form-feedback" id="racconto-error" role="alert" tabindex="-1" hidden></div>
+            </form>
+          </div>
         </div>
       </div>
     </section>
@@ -325,7 +450,8 @@
 	  <div class="wrap">
 		Stand Gastronomico · Sviluppato da TizioIncognito ·
 		<a href="https://ko-fi.com/tizioincognito">Sostieni il progetto</a> ·
-		<a href="privacy-stand-gastronomico.html">Privacy policy</a>
+		<a href="privacy-stand-gastronomico.html">Privacy App</a> ·
+		<a href="privacy-sito.html">Privacy Sito</a>
 	  </div>
   </footer>
   <div class="lightbox" id="lightbox" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Anteprima immagine">
@@ -368,6 +494,107 @@
     closeLightbox.addEventListener('click', closePreview);
     lightbox.addEventListener('click', (event) => { if (event.target === lightbox) closePreview(); });
     document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && !lightbox.hidden) closePreview(); });
+  </script>
+  <script src="https://unpkg.com/@formspree/ajax@1.1.5/dist/global.js" integrity="sha384-9fQrvHz7unHjhv7e+pJqhvNxPV4tYHHsSn3PxBIEyPTGY8Q/PAKM1sfhL+zTYmhc" crossorigin="anonymous" defer></script>
+  <script>
+    (function () {
+      var form = document.getElementById('racconto-form');
+      if (!form) return;
+      var submitBtn = document.getElementById('racconto-submit');
+      var successBox = document.getElementById('racconto-success');
+      var errorBox = document.getElementById('racconto-error');
+      var label = submitBtn ? submitBtn.textContent : 'Invia il messaggio';
+
+      function hide(el) { if (!el) return; el.hidden = true; el.textContent = ''; }
+      function show(el, text) { if (!el) return; el.textContent = text; el.hidden = false; if (el.focus) el.focus(); }
+      function busy(on) {
+        form.setAttribute('aria-busy', on ? 'true' : 'false');
+        if (!submitBtn) return;
+        submitBtn.disabled = on;
+        submitBtn.textContent = on ? 'Invio in corso…' : label;
+      }
+      function errorMessage(error) {
+        try {
+          var campi = error && error.getAllFieldErrors ? error.getAllFieldErrors() : [];
+          if (campi && campi.length) {
+            for (var i = 0; i < campi.length; i++) {
+              if (campi[i] && campi[i].field === 'email') return 'L\u2019indirizzo email non sembra valido: controllalo e riprova.';
+            }
+            return 'Controlla i campi del modulo e riprova.';
+          }
+        } catch (e) { /* ignora */ }
+        return 'Il messaggio non è stato inviato. Controlla i dati e riprova.';
+      }
+
+      window.addEventListener('DOMContentLoaded', function () {
+        if (typeof window.formspree !== 'function') return;
+        window.formspree('initForm', {
+          formElement: form,
+          formId: 'xnpprkad',
+          useDefaultStyles: false,
+          onSubmit: function () { hide(successBox); hide(errorBox); busy(true); },
+          onSuccess: function () {
+            busy(false);
+            form.reset();
+            show(successBox, 'Grazie! Il messaggio è stato inviato. Se hai lasciato un\u2019email ti risponderemo. La pubblicazione non è automatica: se l\u2019hai autorizzata, sarà una scelta manuale.');
+          },
+          onError: function (context, error) { busy(false); show(errorBox, errorMessage(error)); },
+          onFailure: function () {
+            busy(false);
+            show(errorBox, 'Non è stato possibile inviare il messaggio: controlla la connessione e riprova. Se il problema continua, scrivi su GitHub Discussions.');
+          }
+        });
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      var nav = document.getElementById('sitenav');
+      if (!nav) return;
+      var toggle = nav.querySelector('.sitenav-toggle');
+      var panel = document.getElementById('sitenav-panel');
+      var hero = document.querySelector('.hero');
+      var threshold = hero ? Math.max(260, hero.offsetHeight - 80) : 420;
+      var shown = false;
+
+      function setMenu(open) {
+        if (!toggle || !panel) return;
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.textContent = open ? 'Chiudi' : 'Menu';
+        panel.hidden = !open;
+      }
+      function update() {
+        var y = window.scrollY || window.pageYOffset || 0;
+        var show = y > threshold;
+        if (show === shown) return;
+        shown = show;
+        nav.classList.toggle('is-visible', show);
+        if (!show) setMenu(false);
+      }
+
+      if (toggle && panel) {
+        toggle.addEventListener('click', function () { setMenu(panel.hidden); });
+        panel.addEventListener('click', function (event) {
+          if (event.target.closest('a')) setMenu(false);
+        });
+        document.addEventListener('keydown', function (event) {
+          if (event.key === 'Escape' && !panel.hidden) { setMenu(false); toggle.focus(); }
+        });
+        document.addEventListener('click', function (event) {
+          if (!panel.hidden && !nav.contains(event.target)) setMenu(false);
+        });
+      }
+
+      var ticking = false;
+      window.addEventListener('scroll', function () {
+        if (panel && !panel.hidden) setMenu(false);
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(function () { update(); ticking = false; });
+      }, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    })();
   </script>
 </body>
 </html>
